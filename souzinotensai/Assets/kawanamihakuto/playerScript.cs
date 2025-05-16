@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    private const double V = 0.1;
-    float movespeed = (float)V;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +29,7 @@ public class player : MonoBehaviour
             {
                 if (!Input.GetKey(KeyCode.D))
                 {
-                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 2);
+                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3);
                 }
             }
         }
@@ -41,7 +40,7 @@ public class player : MonoBehaviour
             {
                 if (!Input.GetKey(KeyCode.D))
                 {
-                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -2);
+                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -3);
                 }
             }
         }
@@ -49,14 +48,14 @@ public class player : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
 
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-2,0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-3,0);
 
         }
         //DÉLÅ[Ç≈âEÇ…ìÆÇ≠
         if (Input.GetKey(KeyCode.D))
         {
 
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(2, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
 
         }
         

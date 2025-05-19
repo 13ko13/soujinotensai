@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         time -= Time.deltaTime;
+        
         if (time <= 0.0f)
         {
             //0ˆÈã2–¢–ž‚Ì’l‚ªo‚Ü‚·
@@ -28,7 +29,7 @@ public class EnemyController : MonoBehaviour
                 }
                 else
                 {
-                    vecX = -4;
+                    vecX = -1;
                 }
                 
             }
@@ -41,7 +42,7 @@ public class EnemyController : MonoBehaviour
                 }
                 else
                 {
-                    vecY = -4;
+                    vecY = -1;
                 }
             }
 

@@ -6,6 +6,8 @@ public class BossController : MonoBehaviour
 {
     public int maxHP = 5;
     public int currentHP;
+    public int dirt;
+
     // Start is called before the first frame update
     void Start()
     {

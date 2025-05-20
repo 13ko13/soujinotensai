@@ -1,49 +1,41 @@
 using UnityEngine;
 
-public class BossPatrol : MonoBehaviour
+public class EnemyInstantGridMove2D : MonoBehaviour
 {
-    public Transform[] waypoints;
-    public float speed = 2f;
-    public float reachDistance = 0.05f;
+    public float moveInterval = 1f;     // 次のマスに移動するまでの間隔（秒）
+    public float moveDistance = 1f;     // 1マスの距離（単位）
 
-    private int currentWaypointIndex = 0;
-    private Rigidbody2D rb;
+    private float timer;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        timer = moveInterval;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if (waypoints.Length == 0) return;
+        timer -= Time.deltaTime;
 
-        Vector2 targetPos = waypoints[currentWaypointIndex].position;
-        Vector2 currentPos = rb.position;
-
-        Vector2 direction = Vector2.zero;
-
-        float deltaX = targetPos.x - currentPos.x;
-        float deltaY = targetPos.y - currentPos.y;
-
-        // X軸の移動が必要なら先にX方向に動く（Yは0）
-        if (Mathf.Abs(deltaX) > reachDistance)
+        if (timer <= 0f)
         {
-            direction = new Vector2(Mathf.Sign(deltaX), 0);
+            MoveToNextGrid();
+            timer = moveInterval;
         }
-        // Xは合っていればY方向へ移動
-        else if (Mathf.Abs(deltaY) > reachDistance)
-        {
-            direction = new Vector2(0, Mathf.Sign(deltaY));
-        }
-        else
-        {
-            // 到達したら次のポイントへ
-            currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length;
-            return;
-        }
+    }
 
-        // 移動処理
-        rb.MovePosition(currentPos + direction * speed * Time.fixedDeltaTime);
+    void MoveToNextGrid()
+    {
+        Vector3[] directions = new Vector3[]
+        {
+            Vector3.up,    // 上
+            Vector3.down,  // 下
+            Vector3.left,  // 左
+            Vector3.right  // 右
+        };
+
+        Vector3 chosenDir = directions[Random.Range(0, directions.Length)];
+
+        // 現在位置に選んだ方向の1マス分を足して瞬間移動
+        transform.position += chosenDir * moveDistance;
     }
 }

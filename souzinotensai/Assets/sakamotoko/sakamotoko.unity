@@ -578,19 +578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf0b3b2f24446741bd1e15de722a0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 98565632}
-  - {fileID: 275492059}
-  - {fileID: 750103917}
-  - {fileID: 896240567}
-  - {fileID: 976211798}
-  - {fileID: 977348240}
-  - {fileID: 1775295656}
-  - {fileID: 2089711791}
-  - {fileID: 1894649875}
-  - {fileID: 195759400}
-  speed: 3
-  reachDistance: 1
+  moveInterval: 1
+  moveDistance: 1
+  checkRadius: 0.2
 --- !u!212 &1787366941
 SpriteRenderer:
   m_ObjectHideFlags: 0

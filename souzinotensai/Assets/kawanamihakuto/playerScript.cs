@@ -23,39 +23,31 @@ public class player : MonoBehaviour
     {
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);//初期化
         //Wキーで上に動く
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            if (!Input.GetKey(KeyCode.A))
-            {
-                if (!Input.GetKey(KeyCode.D))
-                {
-                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 3);
-                }
-            }
+          
+                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 50);
+              
         }
         //Sキーで下に動く
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            if (!Input.GetKey(KeyCode.A))
-            {
-                if (!Input.GetKey(KeyCode.D))
-                {
-                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -3);
-                }
-            }
+           
+                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -50);
+             
         }
         //Aキーで左に動く
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
 
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-3,0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-50,0);
 
         }
         //Dキーで右に動く
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
 
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(3, 0);
+            this.GetComponent<Rigidbody2D>().velocity = new Vector2(50, 0);
 
         }
         

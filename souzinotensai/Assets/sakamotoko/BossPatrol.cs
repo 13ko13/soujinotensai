@@ -1,9 +1,10 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
-    public float moveInterval = 1f;     // Ÿ‚Ìƒ}ƒX‚ÉˆÚ“®‚·‚é‚Ü‚Å‚ÌŠÔŠui•bj
-    public float moveDistance = 1f;     // 1ƒ}ƒX‚Ì‹——£i’PˆÊj
+    public float moveInterval = 1f;     // æ¬¡ã®ãƒã‚¹ã«å‹•ãã¾ã§ã®æ™‚é–“
+    public float moveDistance = 1f;     // 1ãƒã‚¹åˆ†ã®è·é›¢
+    public float checkRadius = 0.2f;    // å£åˆ¤å®šç”¨ã®åˆ¤å®šåŠå¾„
 
     private float timer;
 
@@ -18,24 +19,51 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
         if (timer <= 0f)
         {
-            MoveToNextGrid();
+            TryMoveToNextGrid();
             timer = moveInterval;
         }
     }
 
-    void MoveToNextGrid()
+    void TryMoveToNextGrid()
     {
         Vector3[] directions = new Vector3[]
         {
-            Vector3.up,    // ã
-            Vector3.down,  // ‰º
-            Vector3.left,  // ¶
-            Vector3.right  // ‰E
+            Vector3.up,
+            Vector3.down,
+            Vector3.left,
+            Vector3.right
         };
 
-        Vector3 chosenDir = directions[Random.Range(0, directions.Length)];
+        ShuffleArray(directions);
 
-        // Œ»İˆÊ’u‚É‘I‚ñ‚¾•ûŒü‚Ì1ƒ}ƒX•ª‚ğ‘«‚µ‚ÄuŠÔˆÚ“®
-        transform.position += chosenDir * moveDistance;
+        foreach (Vector3 dir in directions)
+        {
+            Vector3 nextPos = transform.position + dir * moveDistance;
+
+            if (!IsWallAtPosition(nextPos))
+            {
+                // ä¸€ç¬ã§ç§»å‹•
+                transform.position = nextPos;
+                return;
+            }
+        }
+        // å…¨æ–¹å‘å£ãªã‚‰ç§»å‹•ã—ãªã„
+    }
+
+    bool IsWallAtPosition(Vector3 position)
+    {
+        Collider2D hit = Physics2D.OverlapCircle(position, checkRadius, LayerMask.GetMask("Wall"));
+        return hit != null;
+    }
+
+    void ShuffleArray(Vector3[] array)
+    {
+        for (int i = array.Length - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            Vector3 temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
     }
 }

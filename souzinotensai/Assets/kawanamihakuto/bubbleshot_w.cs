@@ -5,8 +5,8 @@ using UnityEngine;
 public class bubbleshot : MonoBehaviour
 {
     public GameObject bubblePrefab;
-    public Transform firepoint;
-    
+    public Transform firepoint_w;
+    int k;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +17,22 @@ public class bubbleshot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            Instantiate(bubblePrefab, firepoint.position, transform.rotation);
-       
+            k = 0;
+
+        }
+     //   if (Input.anyKey)
+        {
+        //    k = 5;
+        }
+        if (k == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Instantiate(bubblePrefab, firepoint_w.position, transform.rotation);
+
+            }
         }
     }
 }

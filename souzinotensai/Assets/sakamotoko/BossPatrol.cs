@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Xml;
+using UnityEngine;
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
+    [SerializeField] private GameObject dirt;
     public float moveInterval = 1f;     // 次のマスに動くまでの時間
     public float moveDistance = 1f;     // 1マス分の距離
     public float checkRadius = 0.2f;    // 壁判定用の判定半径
@@ -10,6 +12,7 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
     void Start()
     {
+        
         timer = moveInterval;
     }
 
@@ -19,6 +22,7 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
         if (timer <= 0f)
         {
+            GameObject.Instantiate(dirt,this.transform.position, Quaternion.identity);
             TryMoveToNextGrid();
             timer = moveInterval;
         }
@@ -26,6 +30,7 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
     void TryMoveToNextGrid()
     {
+        
         Vector3[] directions = new Vector3[]
         {
             Vector3.up,

@@ -19,4 +19,5 @@ public class bubbleScript : MonoBehaviour
     {
         transform.Translate(0, speed, 0);
     }
+    
 }

@@ -33,33 +33,33 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);//‰Šú‰»
-        //WƒL[‚Åã‚É“®‚­
+        this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //Wï¿½Lï¿½[ï¿½Åï¿½É“ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.W))
         {
           transform.eulerAngles=new Vector3(0, 0, 0);
-                    this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 50);
+                    this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 50);
             dir = Dir.Up;    
         }
-        //SƒL[‚Å‰º‚É“®‚­
+        //Sï¿½Lï¿½[ï¿½Å‰ï¿½ï¿½É“ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.S))
         {
             transform.eulerAngles = new Vector3(0, 0, 180);
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -50);
+            this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -50);
             dir = Dir.Down;
         }
-        //AƒL[‚Å¶‚É“®‚­
+        //Aï¿½Lï¿½[ï¿½Åï¿½ï¿½É“ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 0, 90);
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(-50,0);
+            this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-50,0);
             dir = Dir.Left;
         }
-        //DƒL[‚Å‰E‚É“®‚­
+        //Dï¿½Lï¿½[ï¿½Å‰Eï¿½É“ï¿½ï¿½ï¿½
         if (Input.GetKeyDown(KeyCode.D))
         {
             transform.eulerAngles = new Vector3(0, 0, -90);
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(50, 0);
+            this.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(50, 0);
             Debug.Log("4");
             dir = Dir.Right;
         }

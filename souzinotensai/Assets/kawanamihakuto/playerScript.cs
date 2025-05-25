@@ -7,7 +7,8 @@ public class player : MonoBehaviour
     public GameObject bubblePrefab;
     public Transform firepoit;
     public float speed = 0.1f;
-
+    private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
+    private float timer;
     enum Dir 
     {
         Up,
@@ -64,8 +65,12 @@ public class player : MonoBehaviour
             dir = Dir.Right;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        timer += Time.deltaTime;//タイマーの時間を動かす
+
+        if (Input.GetKeyDown(KeyCode.Space)&&timer>timeBetweenShot)
         {
+            timer = 0.0f;//タイマーの時間を0に戻す
+
             if (dir == Dir.Up)
             {
                 Instantiate(bubblePrefab, firepoit.position, transform.rotation);

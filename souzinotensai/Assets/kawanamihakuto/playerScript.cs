@@ -23,18 +23,18 @@ public class player : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "wall")
-        {
-            Debug.Log("aaaaaa");
+    // private void OnTriggerEnter2D(Collider2D collision)
+    // {
+    //    if (collision.gameObject.tag == "wall")
+    //    {
+    //        Debug.Log("aaaaaa");
 
-        }
-    }
+    //    }
+    // }
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Rigidbody2D>().velocity= new Vector2(0, 0);
+        this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         //Wを押したとき
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -92,9 +92,18 @@ public class player : MonoBehaviour
                 //transform.Translate(speed, 0,  0);
             }
         }
-
-
-
-
     }
+
+         private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy")) // 敵かどうかのタグをチェック
+        {
+            Debug.Log("Enemy");
+           
+            Destroy(gameObject);
+        }
+    }
+
+
 }
+

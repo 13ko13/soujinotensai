@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - bubble
   - dirt
+  - player
   layers:
   - Default
   - TransparentFX

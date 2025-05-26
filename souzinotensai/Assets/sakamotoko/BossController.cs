@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class BossController : MonoBehaviour
     public int maxHP = 5;
     public int currentHP;
     public int dirt;
+    public GameObject Dirt;
+    public GameObject Boss;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,7 @@ public class BossController : MonoBehaviour
     {
         currentHP -= 1;
 
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             Die();
         }
@@ -27,6 +31,9 @@ public class BossController : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject); 
+        Destroy(gameObject);
     }
+
+
+
 }

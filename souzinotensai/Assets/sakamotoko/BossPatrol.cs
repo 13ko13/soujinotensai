@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
+    //生成したいもの（今回は汚れ）
     [SerializeField] private GameObject dirt;
     public float moveInterval = 1f;     // 次のマスに動くまでの時間
     public float moveDistance = 1f;     // 1マス分の距離
@@ -22,6 +23,8 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
         if (timer <= 0f)
         {
+            //プレハブとポジションと回転の向き
+            //これは汚れと自分のポジションと回転をそのまま
             GameObject.Instantiate(dirt,this.transform.position, Quaternion.identity);
             TryMoveToNextGrid();
             timer = moveInterval;

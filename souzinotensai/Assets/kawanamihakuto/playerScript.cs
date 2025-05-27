@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -101,7 +102,11 @@ public class player : MonoBehaviour
             Debug.Log("Enemy");
            
             Destroy(gameObject);
+
+            //SceneManager.LoadScene("ClearScene");
+
         }
+
     }
 
 

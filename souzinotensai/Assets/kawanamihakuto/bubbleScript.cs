@@ -19,5 +19,13 @@ public class bubbleScript : MonoBehaviour
     {
         transform.Translate(0, speed, 0);
     }
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("wall")) // 壁かどうかのタグをチェック
+        {
+            Debug.Log("wall");
+             // オブジェクトを破壊
+            Destroy(gameObject);
+        }
+    }
 }

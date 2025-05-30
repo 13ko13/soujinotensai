@@ -62,7 +62,7 @@ public class player : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 0, -90);
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(50, 0);
-            Debug.Log("4");
+           // Debug.Log("4");
             dir = Dir.Right;
         }
 
@@ -108,7 +108,6 @@ public class player : MonoBehaviour
         }
 
     }
-
 
 }
 

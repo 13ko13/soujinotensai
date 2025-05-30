@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5890819255622270218}
   - component: {fileID: 8594213962978780895}
   - component: {fileID: 5285355433005864299}
-
+  - component: {fileID: 6903744195549773733}
   m_Layer: 0
   m_Name: dirt
   m_TagString: dirt
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1e417c377a50a44bcfaf7b2c137445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
+--- !u!114 &6903744195549773733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

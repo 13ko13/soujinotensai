@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//‹…‚ğÄ“x‘Å‚Ä‚é‚æ‚¤‚É‚È‚é‚Ü‚Å‚ÌŠÔ
     private float timer;
+
     enum Dir
     {
         Up,
@@ -22,7 +23,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
     // private void OnTriggerEnter2D(Collider2D collision)
     // {
@@ -35,6 +36,11 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½‚©‚Ç‚¤‚©
+        
+
+
+
         this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         //W‚ğ‰Ÿ‚µ‚½‚Æ‚«
         if (Input.GetKeyDown(KeyCode.W))
@@ -108,6 +114,6 @@ public class player : MonoBehaviour
         }
 
     }
-
+    
 }
 

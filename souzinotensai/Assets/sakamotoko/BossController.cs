@@ -17,8 +17,6 @@ public class BossController : MonoBehaviour
     {
         currentHP = maxHP;
     }
-
-    // Update is called once per frame
     void TakeDamage()
     {
         currentHP -= 1;
@@ -28,6 +26,18 @@ public class BossController : MonoBehaviour
             Die();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("bubble")) // 球かどうかのタグをチェック
+        {
+            Debug.Log("bubble");
+            Destroy(collision.gameObject); // オブジェクトを破壊
+           TakeDamage();
+        }
+    }
+    // Update is called once per frame
+   
 
     void Die()
     {

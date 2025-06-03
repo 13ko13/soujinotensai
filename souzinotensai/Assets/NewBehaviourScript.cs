@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayText : MonoBehaviour
+public class RespawnPoint: MonoBehaviour
 {
     private TextMesh textMesh;
     // Start is called before the first frame update

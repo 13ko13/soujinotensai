@@ -23,6 +23,10 @@ public class dirtScript : MonoBehaviour
            
             Destroy(gameObject);//‰˜‚ê‚ğÁ‚·
         }
+        if(collision.gameObject.CompareTag("sikaku"))
+        {
+            Destroy(gameObject);//‰˜‚ê‚ğÁ‚·
+        }
     }
 }
 

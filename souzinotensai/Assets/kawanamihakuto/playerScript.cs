@@ -107,7 +107,7 @@ public class player : MonoBehaviour
            
             Destroy(gameObject);
 
-            SceneManager.LoadScene("GameoverScene");
+            //SceneManager.LoadScene("GameoverScene");
 
         }
 

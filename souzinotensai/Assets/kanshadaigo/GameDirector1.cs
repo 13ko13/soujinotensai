@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameDirector1 : MonoBehaviour
 {
+
+    private GameObject[] dirtBox;
+
     GameObject hpGauge;
     // Start is called before the first frame update
     void Start()
@@ -12,6 +16,15 @@ public class GameDirector1 : MonoBehaviour
         this.hpGauge = GameObject.Find("hpGauge");
     }
 
+    private void Update()
+    {
+        dirtBox = GameObject.FindGameObjectsWithTag("dirt");
+
+        if (dirtBox.Length == 0)
+        {
+            SceneManager.LoadScene("GameclearScene");
+        }
+    }
     // Update is called once per frame
     public void DecreaseHP()
     {

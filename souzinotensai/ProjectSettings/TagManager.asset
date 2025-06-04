@@ -9,6 +9,7 @@ TagManager:
   - bubble
   - dirt
   - player
+  - sikaku
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
     // 生成したいもの（今回は汚れ）

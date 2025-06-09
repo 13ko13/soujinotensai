@@ -3,11 +3,13 @@
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
+    #region
     // 生成したいもの（今回は汚れ）
     [SerializeField] private GameObject dirt;
-    public float moveInterval = 1f;     // 次のマスに動くまでの時間
+    [Header("移動速度")]public float moveInterval = 1f; 
     public float moveDistance = 1f;     // 1マス分の距離
     public float checkRadius = 0.2f;    // 壁判定用の判定半径
+    #endregion
 
     private float timer;
     private BoxCollider2D boxCollider;

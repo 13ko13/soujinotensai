@@ -5,15 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/kanshadaigo/MenuScene.unity
+    guid: 76fb303b2463ed74a884af47f051e4a6
   - enabled: 0
     path: Assets/kanshadaigo/GameScene.unity
     guid: d5d5456cea33ee34cb304b5cb8f2fdee
   - enabled: 1
-    path: Assets/kanshadaigo/MenuScene.unity
-    guid: 76fb303b2463ed74a884af47f051e4a6
-  - enabled: 1
-    path: Assets/Integration/kudousyouta.unity
-    guid: 7373143410a0b3d4c97a1b920afa677d
+    path: Assets/Integration/kudousyouta 2.unity
+    guid: e8553ffbc5206f54d9a84c2c53526caa
   - enabled: 1
     path: Assets/kanshadaigo/GameoverScene.unity
     guid: e173a00daeb0e3042a59acf7bd3ab086

@@ -16,7 +16,7 @@ public class MenuDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("kudousyouta");
+            SceneManager.LoadScene("kudousyouta 2");
         }
     }
 }

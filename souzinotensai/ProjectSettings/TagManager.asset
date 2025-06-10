@@ -11,6 +11,7 @@ TagManager:
   - player
   - sikaku
   - Text
+  - item
   layers:
   - Default
   - TransparentFX

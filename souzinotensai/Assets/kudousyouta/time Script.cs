@@ -9,16 +9,16 @@ public class timeScript : MonoBehaviour
 {
     GameObject g;
     Text timeText;
-    float timer = 30;
+    public float timer = 30;
 
-    private void Start()
+    public void Start()
     {
        
         timeText = GameObject.Find("ScoreText").GetComponent<Text>();
        
     }
 
-    private void Update()
+    public void Update()
     {
         timer -= Time.deltaTime;
         timeText.text = timer.ToString("F1");

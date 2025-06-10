@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5168268911803248302, guid: c8190fe74c869db4aa76ee19c9645e69, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7889705470698355892, guid: c8190fe74c869db4aa76ee19c9645e69, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5
@@ -364,6 +368,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 686737681280133927, guid: 804f3e55bede4d342a01db743f07d0e3, type: 3}
+      propertyPath: checkWallRadius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 686737681280133927, guid: 804f3e55bede4d342a01db743f07d0e3, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 977937617999679307, guid: 804f3e55bede4d342a01db743f07d0e3, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -408,6 +420,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4047101507237029663, guid: 804f3e55bede4d342a01db743f07d0e3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -424,6 +440,10 @@ PrefabInstance:
     - target: {fileID: 5116384490208306886, guid: c8190fe74c869db4aa76ee19c9645e69, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6825370748138374671, guid: c8190fe74c869db4aa76ee19c9645e69, type: 3}
+      propertyPath: m_BodyType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7889705470698355892, guid: c8190fe74c869db4aa76ee19c9645e69, type: 3}
       propertyPath: m_LocalPosition.x

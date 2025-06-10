@@ -3,13 +3,14 @@
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
-    #region
+    
     // 生成したいもの（今回は汚れ）
     [SerializeField] private GameObject dirt;
-    [Header("移動速度")]public float moveInterval = 1f; 
+    public float moveInterval = 1f;     //移動時間間隔
     public float moveDistance = 1f;     // 1マス分の距離
-    public float checkRadius = 0.2f;    // 壁判定用の判定半径
-    #endregion
+    public float checkWallRadius = 0.2f;    // 壁判定用の判定半径
+    public float checkEnemyRadius = 0.2f;
+    
 
     private float timer;
     private BoxCollider2D boxCollider;
@@ -81,13 +82,19 @@ public class EnemyInstantGridMove2D : MonoBehaviour
                 transform.position = nextPos;
                 return;
             }
+
+            if(!IsEnemyAtPosition(nextPos))
+            {
+                transform.position = nextPos;
+                return;
+            }
         }
         // 全方向壁なら移動しない
     }
 
     bool IsWallAtPosition(Vector3 position)
     {
-        Collider2D hit = Physics2D.OverlapCircle(position, checkRadius, LayerMask.GetMask("Wall"));
+        Collider2D hit = Physics2D.OverlapCircle(position, checkWallRadius, LayerMask.GetMask("Wall"));
         return hit != null;
     }
 
@@ -100,5 +107,11 @@ public class EnemyInstantGridMove2D : MonoBehaviour
             array[i] = array[j];
             array[j] = temp;
         }
+    }
+
+    bool IsEnemyAtPosition(Vector3 position)
+    {
+        Collider2D hit = Physics2D.OverlapCircle(position, checkEnemyRadius, LayerMask.GetMask("Enemy"));
+        return hit != null;
     }
 }

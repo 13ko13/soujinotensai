@@ -1132,7 +1132,8 @@ MonoBehaviour:
   dirt: {fileID: 8181215300635453660, guid: 37c8d5b9cdaed7d47be3c102c6e285a3, type: 3}
   moveInterval: 1
   moveDistance: 1
-  checkRadius: 0.2
+  checkWallRadius: 0.2
+  checkEnemyRadius: 0.2
 --- !u!61 &439576051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1605,7 +1606,8 @@ MonoBehaviour:
   dirt: {fileID: 8181215300635453660, guid: 37c8d5b9cdaed7d47be3c102c6e285a3, type: 3}
   moveInterval: 1
   moveDistance: 1
-  checkRadius: 0.2
+  checkWallRadius: 0.2
+  checkEnemyRadius: 0.2
 --- !u!50 &973642927
 Rigidbody2D:
   serializedVersion: 4
@@ -2087,7 +2089,8 @@ MonoBehaviour:
   dirt: {fileID: 8181215300635453660, guid: 37c8d5b9cdaed7d47be3c102c6e285a3, type: 3}
   moveInterval: 1
   moveDistance: 1
-  checkRadius: 0.2
+  checkWallRadius: 0.2
+  checkEnemyRadius: 0.2
 --- !u!50 &1580156000
 Rigidbody2D:
   serializedVersion: 4

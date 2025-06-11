@@ -3,7 +3,9 @@ guid: 3c0aa3406e1615546a2597bfe912dae7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
+  - firepoit: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

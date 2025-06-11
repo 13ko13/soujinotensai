@@ -587,7 +587,8 @@ MonoBehaviour:
   dirt: {fileID: 0}
   moveInterval: 1
   moveDistance: 1
-  checkRadius: 0.2
+  checkWallRadius: 0.2
+  checkEnemyRadius: 0.2
 --- !u!1001 &1164798735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -994,7 +995,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826526705}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
   m_Name: 

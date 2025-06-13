@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class dirtScript : MonoBehaviour
 {
-    public GameObject Dirt;
+    
+    public float timer;
+    public float timeBetweenShot = 0.1f;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -15,35 +19,16 @@ public class dirtScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+        timer += Time.deltaTime;
+
     }
 
-    public void SpawnDirt(Vector3 spawnPosition)
-    {
-        //同じ位置にある同じタグのオブジェクトを探す
-        Collider[] colliders = Physics.OverlapSphere(spawnPosition, 0.01f);
-
-        foreach(var col in colliders)
-        {
-            if(col.gameObject.CompareTag("dirt"))
-            {
-                //古いオブジェクトを消す
-                Destroy(col.gameObject);
-                Debug.Log("古いオブジェクトを消した");
-            }
-
-        }
-
-        //新しいオブジェクトを生成
-        GameObject newDirt = Instantiate(Dirt, spawnPosition, Quaternion.identity);
-        newDirt.tag = "dirt";
-        Debug.Log("新しいオブジェクトを生成した");
-    }
-
+    
    
 
-         private void OnTriggerEnter2D(Collider2D collision)
-         {
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag("player")) // playerかどうかのタグをチェック
         {
             //Debug.Log("player");
@@ -54,6 +39,20 @@ public class dirtScript : MonoBehaviour
         {
             Destroy(gameObject);//汚れを消す
         }
-         }
+
+      //if(collision.gameObject.CompareTag("dirt")) //汚れかどうかのタグをチェック
+      //{
+      //OldDirtDelete.SpawnDirt(new Vector3 );
+      //}
+
+        if (collision.gameObject.CompareTag("dirt"))//汚れかどうかのタグをチェック
+        {
+            if (timer > timeBetweenShot) 
+            {
+                Destroy(gameObject);
+            }
+            
+        }
+    }
 }
 

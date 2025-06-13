@@ -143,4 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f521a30dd1f772448cbe00de36e1bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dirt: {fileID: 6608270351922111920}
+  timer: 0
+  timeBetweenShot: 0.5

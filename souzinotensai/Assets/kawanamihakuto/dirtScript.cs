@@ -19,7 +19,7 @@ public class dirtScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("player")) // playerかどうかのタグをチェック
         {
-            Debug.Log("player");
+            //Debug.Log("player");
            
             Destroy(gameObject);//汚れを消す
         }

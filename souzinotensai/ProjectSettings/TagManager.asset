@@ -12,6 +12,7 @@ TagManager:
   - sikaku
   - Text
   - item
+  - SpawnDirt
   layers:
   - Default
   - TransparentFX

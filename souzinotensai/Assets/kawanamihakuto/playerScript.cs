@@ -34,6 +34,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
+            Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
         }
 

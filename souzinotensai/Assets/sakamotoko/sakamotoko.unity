@@ -832,10 +832,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
+  widthtile: 2
+  heighttile: 2
   moveInterval: 1
   moveDistance: 1
   checkWallRadius: 1
-  checkEnemyRadius: 1
+  checkEnemyRadius: 4
 --- !u!212 &1051990290
 SpriteRenderer:
   m_ObjectHideFlags: 0

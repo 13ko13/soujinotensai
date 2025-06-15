@@ -30,7 +30,7 @@ public class player : MonoBehaviour
    
     void Update()
     {
-        if(cleaning==reload)//一定数汚れを掃除したら
+        if(cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
@@ -72,7 +72,7 @@ public class player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && bulletsNum >= 1)//timer > timeBetweenShot)
         {
-            timer = 0.0f;//タイマーの時間を0に戻す
+            //timer = 0.0f;//タイマーの時間を0に戻す
 
             bulletsNum -= 1;//残り弾数を減らす
 

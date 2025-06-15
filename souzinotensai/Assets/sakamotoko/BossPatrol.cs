@@ -3,15 +3,18 @@
 
 public class EnemyInstantGridMove2D : MonoBehaviour
 {
-    
+
     // 生成したいもの（今回は汚れ）
     [SerializeField] private GameObject dirt;
-    public float moveInterval = 1f;     //移動時間間隔
-    public float moveDistance = 1f;     // 1マス分の距離
-    public float checkWallRadius = 0.2f;    // 壁判定用の判定半径
-    public float checkEnemyRadius = 0.2f;
+    [SerializeField] private int widthtile = 2;
+    [SerializeField] private int heighttile = 2;
+    public float moveInterval = 1f;         //移動時間間隔
+    public float moveDistance = 1f;         // 1マス分の距離
+    public float checkWallRadius = 1.0f;    //壁判定用の判定半径
+    public float checkEnemyRadius = 2.0f;   //敵判定用のサークル半径
+    private float checkDirtRadius = 0.1f; 　//判定用のサークルの半径
+    private float gridsize = 1f;
     
-
     private float timer;
     private BoxCollider2D boxCollider;
 
@@ -27,38 +30,65 @@ public class EnemyInstantGridMove2D : MonoBehaviour
 
         if (timer <= 0f)
         {
-            SpawnDirtFromCollider();  // Bossのサイズに応じて汚れを生成
+            FindDirt();
             TryMoveToNextGrid();      // グリッド移動
             timer = moveInterval;
         }
     }
 
-    void SpawnDirtFromCollider()
+    public void FindDirt()
     {
-        if (boxCollider == null) return;
+        Vector2 origin = transform.position;
 
-        // コライダーのサイズとオフセットを取得
-        Vector2 size = boxCollider.size;
-        Vector2 offset = boxCollider.offset;
+        //オフセットを計算する
+        float xStart = -((widthtile -1)  / 2);
+        float yStart = -((heighttile - 1) / 2);
 
-        // マス単位の幅と高さ（roundして整数化）
-        Vector2Int tileSize = new Vector2Int(
-            Mathf.RoundToInt(size.x / moveDistance),
-            Mathf.RoundToInt(size.y / moveDistance)
-        );
-
-        // 左下を基準とした生成開始位置（中心 + オフセット - 半サイズ）
-        Vector3 origin = transform.position + (Vector3)offset - new Vector3(size.x, size.y, 0f) * 0.5f;
-
-        // 各マスに汚れを生成
-        for (int x = 0; x < tileSize.x; x++)
+        for(int y = 0; y < heighttile; y++)
         {
-            for (int y = 0; y < tileSize.y; y++)
+            for(int x = 0; x < widthtile; x++)
             {
-                Vector3 spawnPos = origin + new Vector3(x * moveDistance, y * moveDistance, 0f);
-                Instantiate(dirt, spawnPos, Quaternion.identity);
+                Vector2 offset = new Vector2((xStart + x) * gridsize, (yStart + y) * gridsize);
+                Vector2 cellsenter = origin+ offset;
+
+                if(!IsDirtAtPosition(cellsenter))
+                {
+                    SpawnDirtFromCollider();  // Bossのサイズに応じて汚れを生成
+                }
             }
         }
+    }
+
+    void SpawnDirtFromCollider()
+    {
+        
+        
+            if (boxCollider == null) return;
+
+            // コライダーのサイズとオフセットを取得
+            Vector2 size = boxCollider.size;
+            Vector2 offset = boxCollider.offset;
+
+            // マス単位の幅と高さ（roundして整数化）
+            Vector2Int tileSize = new Vector2Int(
+                Mathf.RoundToInt(size.x / moveDistance),
+                Mathf.RoundToInt(size.y / moveDistance)
+            );
+
+            // 左下を基準とした生成開始位置（中心 + オフセット - 半サイズ）
+            Vector3 origin = transform.position + (Vector3)offset - new Vector3(size.x, size.y, 0f) * 0.5f;
+
+            // 各マスに汚れを生成
+            for (int x = 0; x < tileSize.x; x++)
+            {
+                for (int y = 0; y < tileSize.y; y++)
+                {
+                    Vector3 spawnPos = origin + new Vector3(x * moveDistance, y * moveDistance, 0f);
+                    Instantiate(dirt, spawnPos, Quaternion.identity);
+                }
+            }
+        
+        
     }
 
     void TryMoveToNextGrid()
@@ -83,7 +113,7 @@ public class EnemyInstantGridMove2D : MonoBehaviour
                 return;
             }
 
-            if(!IsEnemyAtPosition(nextPos))
+            if (!IsEnemyAtPosition(nextPos))
             {
                 transform.position = nextPos;
                 return;
@@ -110,9 +140,15 @@ public class EnemyInstantGridMove2D : MonoBehaviour
         }
     }
 
-    bool IsEnemyAtPosition(Vector3 position)
+    bool IsEnemyAtPosition(Vector2 position)
     {
         Collider2D hit = Physics2D.OverlapCircle(position, checkEnemyRadius, LayerMask.GetMask("Enemy"));
+        return hit != null;
+    }
+
+    bool IsDirtAtPosition(Vector2 position)
+    {
+        Collider2D hit = Physics2D.OverlapCircle(position, checkDirtRadius, LayerMask.GetMask("dirt"));
         return hit != null;
     }
 }

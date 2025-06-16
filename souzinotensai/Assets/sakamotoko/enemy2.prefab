@@ -179,7 +179,7 @@ MonoBehaviour:
   moveInterval: 1
   moveDistance: 1
   checkWallRadius: 1
-  checkEnemyRadius: 4
+  checkEnemyRadius: 1
 --- !u!61 &4795467259899698842
 BoxCollider2D:
   m_ObjectHideFlags: 0

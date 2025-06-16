@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: dirt
       value: 
       objectReference: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
+    - target: {fileID: 1036949229203113260, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5
@@ -678,7 +682,7 @@ GameObject:
   - component: {fileID: 1051990287}
   - component: {fileID: 1051990286}
   - component: {fileID: 1051990285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: boosunnti2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -837,7 +841,7 @@ MonoBehaviour:
   moveInterval: 1
   moveDistance: 1
   checkWallRadius: 1
-  checkEnemyRadius: 4
+  checkEnemyRadius: 3
 --- !u!212 &1051990290
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -917,6 +921,10 @@ PrefabInstance:
       propertyPath: dirt
       value: 
       objectReference: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
+    - target: {fileID: 1036949229203113260, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5

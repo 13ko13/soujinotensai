@@ -13,7 +13,7 @@ public class EnemyInstantGridMove2D : MonoBehaviour
     public float checkWallRadius = 1.0f;    //壁判定用の判定半径
     public float checkEnemyRadius = 2.0f;   //敵判定用のサークル半径
     private float checkDirtRadius = 0.1f; 　//判定用のサークルの半径
-    private float gridsize = 1f;
+    private float gridsize = 1f; //1マス
     
     private float timer;
     private BoxCollider2D boxCollider;
@@ -107,20 +107,14 @@ public class EnemyInstantGridMove2D : MonoBehaviour
         {
             Vector3 nextPos = transform.position + dir * moveDistance;
 
-            if (!IsWallAtPosition(nextPos))
+            if (!IsWallAtPosition(nextPos) == false || !IsEnemyAtPosition(nextPos) == false)
             {
                 transform.position = nextPos;
                 return;
             }
-
-            if (!IsEnemyAtPosition(nextPos))
-            {
-                transform.position = nextPos;
-                return;
-            }
+            // 全方向壁なら移動しない
+            //全方向敵なら移動しない
         }
-        // 全方向壁なら移動しない
-        //全方向敵なら移動しない
     }
 
     bool IsWallAtPosition(Vector3 position)

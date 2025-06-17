@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8181215300635453660
+--- !u!1 &2509027220753607969
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1741907757753941200}
-  - component: {fileID: 5890819255622270218}
-  - component: {fileID: 8594213962978780895}
-  - component: {fileID: 5285355433005864299}
-  - component: {fileID: -5443174799090591291}
-  - component: {fileID: 7669460712483826675}
+  - component: {fileID: 4204585335563396902}
+  - component: {fileID: 6212949849607999483}
+  - component: {fileID: -6570858799282113179}
+  - component: {fileID: -6012975973096770803}
   m_Layer: 0
-  m_Name: dirt
+  m_Name: dirt_2_Prefab
   m_TagString: dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1741907757753941200
+--- !u!4 &4204585335563396902
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
+  m_GameObject: {fileID: 2509027220753607969}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.86, y: 2.9, z: 0}
+  m_LocalPosition: {x: -1.1122878, y: 1.0798926, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &5890819255622270218
+--- !u!212 &6212949849607999483
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
+  m_GameObject: {fileID: 2509027220753607969}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 0.09732112, g: 0.764151, b: 0.5603991, a: 1}
+  m_Color: {r: 0.8867924, g: 0.14640439, b: 0.7631276, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -88,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8594213962978780895
+--- !u!61 &-6570858799282113179
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
+  m_GameObject: {fileID: 2509027220753607969}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -131,41 +129,19 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5285355433005864299
+--- !u!114 &-6012975973096770803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1e417c377a50a44bcfaf7b2c137445, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5443174799090591291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f521a30dd1f772448cbe00de36e1bdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7669460712483826675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8181215300635453660}
+  m_GameObject: {fileID: 2509027220753607969}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f521a30dd1f772448cbe00de36e1bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: 0
+  timeBetweenShot: 0.1

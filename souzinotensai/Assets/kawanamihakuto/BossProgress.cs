@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class BossProgress2 : MonoBehaviour
+public class BossProgress : MonoBehaviour
 {
     // 生成したいもの（今回は汚れ）
     [SerializeField] private GameObject dirt;

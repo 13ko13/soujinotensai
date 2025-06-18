@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3191964414221198284}
   - component: {fileID: 7609080154583067950}
   - component: {fileID: 5508287525070888400}
+  - component: {fileID: 4797997831192304219}
   m_Layer: 0
   m_Name: enemyPrefab
   m_TagString: Enemy
@@ -184,10 +185,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b72f85dc7c80b42b6e5917f836ef0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirt: {fileID: 0}
+  dirt: {fileID: 2509027220753607969, guid: 0c4f0eaa48f8bf148847198b8581ba52, type: 3}
   widthtile: 2
   heighttile: 2
   moveInterval: 1
   moveDistance: 1
   checkWallRadius: 1
   checkEnemyRadius: 2
+--- !u!114 &4797997831192304219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4792641462370621041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1887ba9e161de4aa204ff7822a67c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dirt: {fileID: 0}
+  moveInterval: 1
+  moveDistance: 1
+  checkRadius: 0.2

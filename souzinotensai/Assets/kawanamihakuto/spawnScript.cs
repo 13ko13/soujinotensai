@@ -30,8 +30,9 @@ public class spawnScript : MonoBehaviour
        
         if (temp==enemybox.Length&&num!=5)
         {
-          num++;
+            num++;
             Instantiate(enemyPrefab);
+            Debug.Log("“G‚ÌƒXƒ|[ƒ“");
         }
         temp = enemybox.Length-1;
     }

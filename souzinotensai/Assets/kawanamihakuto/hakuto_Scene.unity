@@ -578,13 +578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf0b3b2f24446741bd1e15de722a0e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dirt: {fileID: 0}
-  widthtile: 2
-  heighttile: 2
-  moveInterval: 1
-  moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.2
 --- !u!1 &1201156021
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +725,10 @@ PrefabInstance:
     - target: {fileID: 4792641462370621041, guid: d8836ac736da51d44ad9525a3fccbf58, type: 3}
       propertyPath: m_Name
       value: enemyPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508287525070888400, guid: d8836ac736da51d44ad9525a3fccbf58, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8818179768403278107, guid: d8836ac736da51d44ad9525a3fccbf58, type: 3}
       propertyPath: m_LocalPosition.x

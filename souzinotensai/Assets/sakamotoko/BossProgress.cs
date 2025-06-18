@@ -7,7 +7,8 @@ public class BossProgress2 : MonoBehaviour
     [SerializeField] private GameObject dirt;
     public float moveInterval = 1f;     // 次のマスに動くまでの時間
     public float moveDistance = 1f;     // 1マス分の距離
-    public float checkRadius = 0.2f;    // 壁判定用の判定半径
+    public float checkWallRadius = 0.2f;    // 壁判定用の判定半径
+    public float checkEnemyRadius = 0.4f;
 
     private float timer;
     private BoxCollider2D boxCollider;
@@ -62,49 +63,49 @@ public class BossProgress2 : MonoBehaviour
     {
         Vector3[] directions = new Vector3[]
         {
-            Vector3.up,
-            Vector3.down,
-            Vector3.left,
-            Vector3.right
+        Vector3.up,
+        Vector3.down,
+        Vector3.left,
+        Vector3.right
         };
 
-        ShuffleArray(directions);
+        ShuffleArray(directions);  // 毎回ランダム順にする
 
         foreach (Vector3 dir in directions)
         {
             Vector3 nextPos = transform.position + dir * moveDistance;
-            Debug.Log(nextPos);
-            Vector3 tempnextPos = nextPos;
 
             if (!IsWallAtPosition(nextPos) && !IsEnemyAtPosition(nextPos))
             {
+                // 壁でも敵でもなければ移動！
                 transform.position = nextPos;
                 return;
             }
-            else
-            {
-                nextPos = Vector3.zero;
-                Debug.Log("リセット");
-                ShuffleArray(directions);
-                nextPos = transform.position + dir * moveDistance;
-                transform.position = nextPos;
-
-            }
-
         }
-        // 全方向壁なら移動しない
+
+        // 全方向ふさがれてたら何もしない（待機）
     }
 
     bool IsWallAtPosition(Vector3 position)
     {
-        Collider2D hit = Physics2D.OverlapCircle(position, checkRadius, LayerMask.GetMask("Wall"));
+
+        Collider2D hit = Physics2D.OverlapCircle(position, checkWallRadius, LayerMask.GetMask("Wall"));
         return hit != null;
     }
 
     bool IsEnemyAtPosition(Vector3 position)
     {
-        Collider2D hit = Physics2D.OverlapCircle(position, checkRadius, LayerMask.GetMask("Enemy"));
-        return hit != null;
+        Collider2D[] hits = Physics2D.OverlapCircleAll(position, checkEnemyRadius, LayerMask.GetMask("Enemy"));
+
+        foreach (var hit in hits)
+        {
+            if (hit.gameObject != this.gameObject)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
 

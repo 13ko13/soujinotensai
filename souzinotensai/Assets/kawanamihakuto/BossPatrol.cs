@@ -14,12 +14,14 @@ public class BossPatrol : MonoBehaviour
     public float checkEnemyRadius = 2.0f;   //敵判定用のサークル半径
     private float checkDirtRadius = 0.1f; 　//判定用のサークルの半径
     private float gridsize = 1f; //1マス
+    float  dirtUpdate;
     
     private float timer;
     private BoxCollider2D boxCollider;
 
     void Start()
     {
+        dirtUpdate = 0;
         timer = moveInterval;
         boxCollider = GetComponent<BoxCollider2D>();
     }
@@ -53,6 +55,7 @@ public class BossPatrol : MonoBehaviour
 
                 if(!IsDirtAtPosition(cellsenter))
                 {
+                    
                     SpawnDirtFromCollider();  // Bossのサイズに応じて汚れを生成
                 }
             }
@@ -85,6 +88,7 @@ public class BossPatrol : MonoBehaviour
                 {
                     Vector3 spawnPos = origin + new Vector3(x * moveDistance, y * moveDistance, 0f);
                     Instantiate(dirt, spawnPos, Quaternion.identity);
+                    dirtUpdate++; //汚れの数を記録
                 }
             }
         
@@ -144,5 +148,10 @@ public class BossPatrol : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapCircle(position, checkDirtRadius, LayerMask.GetMask("dirt"));
         return hit != null;
+    }
+
+    void DirtUpdateFunction()
+    {
+        Destroy(gameObject);
     }
 }

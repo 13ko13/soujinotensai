@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fadescene : MonoBehaviour
+public class FadeScene : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

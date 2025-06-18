@@ -19,7 +19,7 @@ public class enemyScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bubble")) // 球かどうかのタグをチェック
         {
-            Debug.Log("bubble");
+            Debug.Log("enemyを倒した");
             Destroy(collision.gameObject); // オブジェクトを破壊
             Destroy(gameObject); 
         }

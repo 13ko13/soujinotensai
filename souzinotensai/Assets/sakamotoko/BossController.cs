@@ -29,6 +29,7 @@ public class BossController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("bubble")) // 球かどうかのタグをチェック
         {
             Debug.Log("bubble");

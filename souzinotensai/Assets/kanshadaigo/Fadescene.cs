@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class FadeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Image fadeImage;
+    public float fadeDuration = 1.0f;  //フェードにかける時間
+
+    public void FadeIn()
     {
         
     }

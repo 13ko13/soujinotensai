@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.5
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.y
@@ -199,6 +199,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7317717868088255395, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1461540552}
+    - targetCorrespondingSourceObject: {fileID: 7317717868088255395, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1461540559}
   m_SourcePrefab: {fileID: 100100000, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
 --- !u!1 &25591323
 GameObject:
@@ -956,6 +959,23 @@ MonoBehaviour:
   moveDistance: 1
   checkWallRadius: 1
   checkEnemyRadius: 1
+--- !u!114 &889344438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889344423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617a857d37fa9054782e6ee691ca11a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1
+  currentHP: 0
+  dirt: 0
+  Dirt: {fileID: 0}
+  Boss: {fileID: 0}
 --- !u!1 &985497743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
@@ -1191,7 +1211,7 @@ Transform:
   m_GameObject: {fileID: 1051990284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: -1}
+  m_LocalPosition: {x: 4, y: -5, z: -1}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1366,6 +1386,23 @@ MonoBehaviour:
   moveDistance: 1
   checkWallRadius: 1
   checkEnemyRadius: 1
+--- !u!114 &1461540559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461540544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617a857d37fa9054782e6ee691ca11a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 1
+  currentHP: 0
+  dirt: 0
+  Dirt: {fileID: 0}
+  Boss: {fileID: 0}
 --- !u!1 &1854780155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1557,10 @@ PrefabInstance:
       propertyPath: checkEnemyRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3457269040388338217, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
@@ -1572,6 +1613,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7317717868088255395, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       insertIndex: -1
       addedObject: {fileID: 889344431}
+    - targetCorrespondingSourceObject: {fileID: 7317717868088255395, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889344438}
   m_SourcePrefab: {fileID: 100100000, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

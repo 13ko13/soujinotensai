@@ -893,9 +893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4792641462370621041, guid: d8836ac736da51d44ad9525a3fccbf58, type: 3}
-  firepoit1: {fileID: 0}
-  firepoit2: {fileID: 0}
-  firepoit3: {fileID: 0}
+  firepoit1: {fileID: 2103052068}
+  firepoit2: {fileID: 1903629872}
+  firepoit3: {fileID: 514270174}
 --- !u!4 &1476239566
 Transform:
   m_ObjectHideFlags: 0

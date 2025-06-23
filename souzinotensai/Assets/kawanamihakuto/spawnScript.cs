@@ -28,6 +28,7 @@ public class spawnScript : MonoBehaviour
 
     void SpawnEnemy()
     {
+        rnd = Random.Range(1, 4);
         if (rnd == 1)
             Instantiate(enemyPrefab,firepoit1.position,transform.rotation);
         if (rnd == 2)
@@ -44,9 +45,9 @@ public class spawnScript : MonoBehaviour
 
         time = Time.deltaTime;
        
-        if (temp==enemybox.Length&&num!=5)
+        if (temp==enemybox.Length&&num!=10)
         {
-            rnd=Random.Range(1,4);
+            
             Invoke("SpawnEnemy", 10.0f);
             num++;
             

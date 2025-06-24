@@ -27,6 +27,7 @@ public class StraightEnemyController : MonoBehaviour
         {
             //¶‰E‚ÉˆÚ“®‚µ‘±‚¯‚é
             transform.position = transform.position + movedistans; //‰E‚ÉˆÚ“®‚·‚é
+            if(gameObject)
             Debug.Log("ˆÚ“®‚µ‚½");
             
         }

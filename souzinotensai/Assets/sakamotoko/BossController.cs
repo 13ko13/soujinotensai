@@ -36,6 +36,8 @@ public class BossController : MonoBehaviour
             Destroy(collision.gameObject); // オブジェクトを破壊
            TakeDamage();
         }
+
+        
     }
     // Update is called once per frame
    

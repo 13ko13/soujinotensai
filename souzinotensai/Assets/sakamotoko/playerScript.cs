@@ -10,6 +10,7 @@ public class player2 : MonoBehaviour
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
+    private Vector3 cullentPos;
 
     enum Dir
     {
@@ -23,6 +24,7 @@ public class player2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cullentPos = transform.position;
         //Application.targetFrameRate = 60;
     }
     // private void OnTriggerEnter2D(Collider2D collision)
@@ -46,6 +48,8 @@ public class player2 : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 0);
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, 1);
             dir = Dir.Up;
+            cullentPos = transform.position;
+            Debug.Log(cullentPos);
         }
         //Sを押したとき
         if (Input.GetKeyDown(KeyCode.S))
@@ -53,6 +57,8 @@ public class player2 : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 180);
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, -1);
             dir = Dir.Down;
+            cullentPos = transform.position;
+            Debug.Log(cullentPos);
         }
         //Aを押したとき
         if (Input.GetKeyDown(KeyCode.A))
@@ -60,6 +66,8 @@ public class player2 : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 0, 90);
             this.GetComponent<Rigidbody2D>().position += new Vector2(-1, 0);
             dir = Dir.Left;
+            cullentPos = transform.position;
+            Debug.Log(cullentPos);
         }
         //Dを押したとき
         if (Input.GetKeyDown(KeyCode.D))
@@ -68,6 +76,8 @@ public class player2 : MonoBehaviour
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
             // Debug.Log("4");
             dir = Dir.Right;
+            cullentPos = transform.position;
+            Debug.Log(cullentPos);
         }
 
         timer += Time.deltaTime;//タイマーの時間を動かす

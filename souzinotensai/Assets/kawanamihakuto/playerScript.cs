@@ -13,6 +13,15 @@ public class player : MonoBehaviour
     int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
     const int reload = 10;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
+
+    public Vector3 wallRightSidePos;
+    public Vector3 wallLeftSidePos;
+    public Vector3 wallUpVerticalPos;
+    public Vector3 wallUnderVerticalPos;
+
+    public Vector3 cullentPos;
+
+
     //enum Dir
     //{
     //    Up,
@@ -25,11 +34,15 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        wallRightSidePos = new Vector3(10.5f, 0, 0);
+        wallLeftSidePos = new Vector3(-8.5f, 0, 0);
+        wallUpVerticalPos = new Vector3(0, 7.5f, 0);
+        wallUnderVerticalPos = new Vector3(0, -7.5f, 0);
     }
    
     void Update()
     {
+        cullentPos = transform.position;
         if(cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
@@ -67,6 +80,33 @@ public class player : MonoBehaviour
             // Debug.Log("4");
             //dir = Dir.Right;
         }
+
+        if(transform.position.x > wallRightSidePos.x) //右の壁にめりこんだら
+        {
+            //壁の中へ戻す
+            cullentPos.x = wallRightSidePos.x;
+            transform.position = cullentPos;
+        }
+        if (transform.position.x < wallLeftSidePos.x) //左の壁にめりこんだら
+        {
+            //壁の中へ戻す
+            cullentPos.x = wallLeftSidePos.x;
+            transform.position = cullentPos;
+        }
+        if (transform.position.y > wallUpVerticalPos.y) //上の壁にめりこんだら
+        {
+            //壁の中へ戻す
+            cullentPos.y = wallUpVerticalPos.y;
+            transform.position = cullentPos;
+        }
+        if (transform.position.y < wallUnderVerticalPos.y) //下の壁にめりこんだら
+        {
+            //壁の中へ戻す
+            cullentPos.y = wallUnderVerticalPos.y;
+            transform.position = cullentPos;
+        }
+
+
 
         timer += Time.deltaTime;//タイマーの時間を動かす
 

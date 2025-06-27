@@ -110,7 +110,7 @@ public class player : MonoBehaviour
 
         timer += Time.deltaTime;//タイマーの時間を動かす
 
-        if (Input.GetKeyDown(KeyCode.Space) && bulletsNum >= 1)//timer > timeBetweenShot)
+        if (Input.GetKeyDown(KeyCode.Space)) //&& bulletsNum >= 1)//timer > timeBetweenShot)
         {
             //timer = 0.0f;//タイマーの時間を0に戻す
 

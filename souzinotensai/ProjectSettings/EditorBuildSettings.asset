@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/kanshadaigo/GameScene.unity
     guid: d5d5456cea33ee34cb304b5cb8f2fdee
   - enabled: 0
-    path: Assets/stage1/MenuScene.unity
+    path: Assets/Stage1/MenuScene.unity
     guid: 798ac50d1f823004688e326e51359de9
   - enabled: 0
-    path: Assets/stage1/cut_in_Scene.unity
+    path: Assets/Stage1/cut_in_Scene.unity
     guid: f555b42faaeb4f244ba3784ff58daa9a
   - enabled: 0
-    path: Assets/stage1/stage1.unity
+    path: Assets/Stage1/stage1.unity
     guid: 35af58f584378844f8382a715ecde688
   - enabled: 1
     path: Assets/Integration/kudousyouta 2.unity

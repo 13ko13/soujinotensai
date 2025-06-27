@@ -5,6 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Integration/MenuScene.unity
+    guid: 8c206df13bce93b4daf02b9d81739c8e
+  - enabled: 1
+    path: Assets/Integration/Stage1.unity
+    guid: eb72cc03a4c6ad443b47b83e9442197b
+  - enabled: 1
+    path: Assets/Integration/GameclearScene.unity
+    guid: 3f9805dd562b72d45af1916ac2f432ef
+  - enabled: 1
+    path: Assets/Integration/Stage2.unity
+    guid: 9224eb8f89501fc4fa201a2ad9575a6f
+  - enabled: 1
+    path: Assets/Integration/Stage3.unity
+    guid: 09a78de1e94d38844bcb11e8ff2de3e1
+  - enabled: 1
+    path: Assets/Integration/Stage4.unity
+    guid: 0d5c76d728d1b5041b7b84f169c3bb51
+  - enabled: 1
+    path: Assets/Integration/GameoverScene.unity
+    guid: 847994c2a685a6a4c9345b412618ca9b
   - enabled: 0
     path: Assets/kanshadaigo/MenuScene.unity
     guid: 76fb303b2463ed74a884af47f051e4a6
@@ -18,9 +39,9 @@ EditorBuildSettings:
     path: Assets/Stage1/cut_in_Scene.unity
     guid: f555b42faaeb4f244ba3784ff58daa9a
   - enabled: 0
-    path: Assets/Stage1/stage1.unity
+    path: Assets/Stage1/Stage1.unity
     guid: 35af58f584378844f8382a715ecde688
-  - enabled: 1
+  - enabled: 0
     path: Assets/Integration/kudousyouta 2.unity
     guid: e8553ffbc5206f54d9a84c2c53526caa
   - enabled: 0
@@ -32,13 +53,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Integration/MenuScene.unity
-    guid: 8c206df13bce93b4daf02b9d81739c8e
-  - enabled: 1
-    path: Assets/Integration/GameoverScene.unity
-    guid: 847994c2a685a6a4c9345b412618ca9b
-  - enabled: 1
-    path: Assets/Integration/GameclearScene.unity
-    guid: 29eee0fbbddce2a4490ffaeada046ab9
   m_configObjects: {}

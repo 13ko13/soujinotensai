@@ -47,12 +47,9 @@ public class dirtScript : MonoBehaviour
 
         if (collision.gameObject.CompareTag("dirt"))//汚れかどうかのタグをチェック
         {
-            
             if (timer > timeBetweenShot) 
             {
-                
                 Destroy(gameObject);
-                Debug.Log("なくなった");
             }
             
         }

@@ -15,7 +15,7 @@ public class StraightEnemyController : MonoBehaviour
     {
         
         move = transform.position;
-        movedistans = new Vector3(1, 0,0);
+        movedistans = new Vector3(0.5f, 0, 0);
     }
 
     // Update is called once per frame

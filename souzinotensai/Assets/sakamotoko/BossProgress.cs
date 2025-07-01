@@ -9,6 +9,7 @@ public class BossProgress2 : MonoBehaviour
     public float moveDistance = 1f;     // 1マス分の距離
     public float checkWallRadius = 0.2f;    // 壁判定用の判定半径
     public float checkEnemyRadius = 0.4f;
+    Vector3[] dirtPos;
 
     private float timer;
     private BoxCollider2D boxCollider;

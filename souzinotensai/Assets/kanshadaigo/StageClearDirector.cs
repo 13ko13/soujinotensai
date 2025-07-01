@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClearDirector : MonoBehaviour
+public class StageClearDirector : MonoBehaviour
 {
     public string menuSceneName = "MenuScene";
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,6 +19,7 @@ public class ClearDirector : MonoBehaviour
         {
             SceneManager.LoadScene("StageClearScene");
         }
+        
 
 
 

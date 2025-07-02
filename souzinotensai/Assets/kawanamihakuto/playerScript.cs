@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.UI;
 public class player : MonoBehaviour
 {
+    //UI
+    public Slider Slider;
+
     public GameObject bubblePrefab;
     public Transform firepoit;
     public float speed = 0.1f;
@@ -34,6 +38,10 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //UI
+        Slider.maxValue = reload;
+        Slider.value = cleaning;
+
         wallRightSidePos = new Vector3(10.5f, 0, 0);
         wallLeftSidePos = new Vector3(-8.5f, 0, 0);
         wallUpVerticalPos = new Vector3(0, 7.5f, 0);
@@ -42,6 +50,9 @@ public class player : MonoBehaviour
    
     void Update()
     {
+        //UI
+        Slider.value = cleaning;
+
         cullentPos = transform.position;
         if(cleaning >= reload)//ˆê’è”‰˜‚ê‚ğ‘|œ‚µ‚½‚ç
         {
@@ -157,6 +168,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("‘|œƒ[ƒ^[[+1]");
             cleaning += 1;
+            
         }
 
     }

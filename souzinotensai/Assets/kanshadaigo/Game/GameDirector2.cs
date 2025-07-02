@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 
 
-public class GameDirector1 : MonoBehaviour
+public class GameDirector2 : MonoBehaviour
 {
     private GameObject[] dirtBox;
     private GameObject[] playerBox;
@@ -26,11 +26,11 @@ public class GameDirector1 : MonoBehaviour
     {
         dirtBox = GameObject.FindGameObjectsWithTag("dirt");
         playerBox = GameObject.FindGameObjectsWithTag("player");
-                
+
         if (dirtBox.Length == 0)
         {
             Debug.Log("ステージクリア");
-            SceneManager.LoadScene("GameclearScene");
+            SceneManager.LoadScene("StageClearScene2");
             CountStage();
 
         }
@@ -43,17 +43,17 @@ public class GameDirector1 : MonoBehaviour
         //ステージ1がクリアされるとステージ2に進む
         if (stageNum == 2)
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("StageClearScene");
         }
         //ステージ2がクリアされるとステージ3に進む
         if (stageNum == 3)
         {
-            SceneManager.LoadScene("Stage3");
+            SceneManager.LoadScene("StageClearScene2");
         }
         //ステージ1がクリアされるとステージ4に進む
         if (stageNum == 4)
         {
-            SceneManager.LoadScene("Stage4");
+            SceneManager.LoadScene("StageClearScene3");
         }
     }
     // Update is called once per frame
@@ -64,7 +64,7 @@ public class GameDirector1 : MonoBehaviour
 
     public int CountStage()
     {
-        if(currentStageNum == 1)
+        if (currentStageNum == 1)
         {
             stageNum = 2;
             currentStageNum = 2;

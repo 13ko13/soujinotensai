@@ -35,7 +35,6 @@ public class sakamotodirtScript : MonoBehaviour
             if (timer > timeBetweenShot)
             {
                 Destroy(gameObject);
-                Debug.Log("‚È‚­‚È‚Á‚½");
             }
 
         }

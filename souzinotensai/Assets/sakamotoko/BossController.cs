@@ -40,31 +40,39 @@ public class BossController : MonoBehaviour
         {
             Debug.Log("bubble");
             Destroy(collision.gameObject); // オブジェクトを破壊
-           TakeDamage();
+            TakeDamage();
         }
 
-        
+
     }
     // Update is called once per frame
-   
+
     //HPバーの更新
     private void UpdateHPBar()
     {
-        if(currentHP == 5.0f)
+        if (currentHP >= 5.0f)
         {
-            hpBarImage.sprite = hpBarSprites[0]; //緑
+            hpBarImage.sprite = hpBarSprites[0]; //最大HP
         }
-        else if(currentHP >= 3.0f)
+        else if (currentHP >= 4.0f)
         {
-            hpBarImage.sprite = hpBarSprites[1]; //黄
+            hpBarImage.sprite = hpBarSprites[1]; //1ダメージくらった時
+        }
+        else if (currentHP >= 3.0f)
+        {
+            hpBarImage.sprite = hpBarSprites[2]; //2ダメージ食らったとき
+        }
+        else if (currentHP >= 2.0f)
+        {
+            hpBarImage.sprite = hpBarSprites[3]; //3ダメージくらうと赤色ゲージ
         }
         else if (currentHP >= 1.0f)
         {
-            hpBarImage.sprite = hpBarSprites[2]; //ピンク
+            hpBarImage.sprite = hpBarSprites[4]; //4ダメージ食らったとき
         }
         else
         {
-            hpBarImage.sprite = hpBarSprites[3]; //グレー
+            hpBarImage.sprite = hpBarSprites[5]; //死んだとき
         }
     }
 

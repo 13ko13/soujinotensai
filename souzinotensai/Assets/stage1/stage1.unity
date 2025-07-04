@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c5d42b8f551bf4aab59a11e629c667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1849211010}
+  slider: {fileID: 914898719618836374, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
   a: 0
 --- !u!4 &82305251
 Transform:
@@ -820,6 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77a3617ca6d77f4e9074d4a287b8b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleNum: {fileID: 0}
 --- !u!4 &595578774
 Transform:
   m_ObjectHideFlags: 0
@@ -1390,8 +1391,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 177839178}
-
-
+  - {fileID: 721623854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1556,10 +1556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  Slider: {fileID: 0}
-
-  bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
+  bubblePrefab: {fileID: 6453028639267694584, guid: 27585f88ee108d24b8c6026771e2cfd3, type: 3}
   firepoit: {fileID: 1355996343}
   speed: 0.1
   cleaning: 0

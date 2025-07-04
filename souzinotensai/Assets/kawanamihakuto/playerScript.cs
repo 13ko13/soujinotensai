@@ -13,6 +13,7 @@ public class player : MonoBehaviour
 
     public GameObject bubblePrefab;
     public Transform firepoit;
+    public GameObject[] wall;
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//ãÖÇçƒìxë≈ÇƒÇÈÇÊÇ§Ç…Ç»ÇÈÇ‹Ç≈ÇÃéûä‘
     private float timer;
@@ -20,10 +21,13 @@ public class player : MonoBehaviour
     public int reload = 10;//íeÇëùÇ‚Ç∑èåèÇÃíl
     int bulletsNum = 0;//écÇËíeêî(Å™ÇÃèåèÇ≈í«â¡Ç≥ÇÍÇÈ)
 
+
     public Vector3 wallRightSidePos;
     public Vector3 wallLeftSidePos;
     public Vector3 wallUpVerticalPos;
     public Vector3 wallUnderVerticalPos;
+    public Vector3 wallThickY;
+    public Vector3 wallThicX;
 
     public Vector3 cullentPos;
 
@@ -42,14 +46,27 @@ public class player : MonoBehaviour
     {
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
 
+
         //UI
         // Slider.maxValue = reload;
         // Slider.value = cleaning;
 
-        wallRightSidePos = new Vector3(10.5f, 0, 0);
-        wallLeftSidePos = new Vector3(-8.5f, 0, 0);
-        wallUpVerticalPos = new Vector3(0, 7.5f, 0);
-        wallUnderVerticalPos = new Vector3(0, -7.5f, 0);
+        //wallRightSidePos = new Vector3(10.5f, 0, 0);
+        //wallLeftSidePos = new Vector3(-8.5f, 0, 0);
+        //wallUpVerticalPos = new Vector3(0, 7.5f, 0);
+        //wallUnderVerticalPos = new Vector3(0, -7.5f, 0);
+
+        
+
+        wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
+        wallLeftSidePos.x += (transform.localScale.x / 2);
+        Debug.Log(wallLeftSidePos);
+        wallRightSidePos = GameObject.Find("wallRight").transform.position;
+        wallRightSidePos.x -= (transform.position.x / 2);
+        wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
+        wallUpVerticalPos.y -= (transform.position.y / 2);
+        wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
+        wallUnderVerticalPos.y += (transform.position.y / 2);
     }
    
     void Update()

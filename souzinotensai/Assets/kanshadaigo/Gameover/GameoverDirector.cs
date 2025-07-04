@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameoverDirector : MonoBehaviour
 {
-    public string menuSceneName = "MenuScene";
+    public string menuSceneName = "GameScene";
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +17,7 @@ public class GameoverDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("kudousyouta");
+            SceneManager.LoadScene("GameScene");
         }
         if(Input.GetKeyDown(KeyCode.Return))
         {

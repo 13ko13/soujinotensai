@@ -7,15 +7,17 @@ using UnityEngine.UI;
 public class player : MonoBehaviour
 {
     //UI
-    public Slider Slider;
+   // public Slider Slider;
+   bubbleNumDirector _bubbleNumDirector;
+    GaugeController _GaugeController;
 
     public GameObject bubblePrefab;
     public Transform firepoit;
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
-    int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
-    const int reload = 10;//弾を増やす条件の値
+    public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
+    public int reload = 10;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
 
     public Vector3 wallRightSidePos;
@@ -38,9 +40,11 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
+
         //UI
-        Slider.maxValue = reload;
-        Slider.value = cleaning;
+        // Slider.maxValue = reload;
+        // Slider.value = cleaning;
 
         wallRightSidePos = new Vector3(10.5f, 0, 0);
         wallLeftSidePos = new Vector3(-8.5f, 0, 0);
@@ -51,13 +55,14 @@ public class player : MonoBehaviour
     void Update()
     {
         //UI
-        Slider.value = cleaning;
+      //  Slider.value = cleaning;
 
         cullentPos = transform.position;
         if(cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
+            _GaugeController.a = 0;
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
         }
@@ -168,6 +173,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("掃除メーター[+1]");
             cleaning += 1;
+            _GaugeController.a++;
             
         }
 

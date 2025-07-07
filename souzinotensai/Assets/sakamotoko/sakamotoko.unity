@@ -535,9 +535,9 @@ GameObject:
   m_Component:
   - component: {fileID: 193530128}
   - component: {fileID: 193530127}
-  - component: {fileID: 193530126}
   - component: {fileID: 193530125}
   - component: {fileID: 193530124}
+  - component: {fileID: 193530129}
   m_Layer: 0
   m_Name: player
   m_TagString: player
@@ -617,35 +617,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &193530126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193530123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
-  firepoit: {fileID: 0}
-  wall:
-  - {fileID: 25591323}
-  - {fileID: 1854780155}
-  - {fileID: 49689970}
-  - {fileID: 1426202800}
-  speed: 0.1
-  cleaning: 0
-  reload: 10
-  wallRightSidePos: {x: 0, y: 0, z: 0}
-  wallLeftSidePos: {x: 0, y: 0, z: 0}
-  wallUpVerticalPos: {x: 0, y: 0, z: 0}
-  wallUnderVerticalPos: {x: 0, y: 0, z: 0}
-  wallThickY: {x: 0, y: 0, z: 0}
-  wallThicX: {x: 0, y: 0, z: 0}
-  cullentPos: {x: 0, y: 0, z: 0}
 --- !u!212 &193530127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -713,6 +684,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &193530129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193530123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8db8b00c696f4c4786563d402e221b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
+  firepoit: {fileID: 0}
+  wall: []
+  speed: 0.1
+  cleaning: 0
+  reload: 10
+  wallRightSidePos: {x: 0, y: 0, z: 0}
+  wallLeftSidePos: {x: 0, y: 0, z: 0}
+  wallUpVerticalPos: {x: 0, y: 0, z: 0}
+  wallUnderVerticalPos: {x: 0, y: 0, z: 0}
+  wallThickY: {x: 0, y: 0, z: 0}
+  wallThicX: {x: 0, y: 0, z: 0}
+  cullentPos: {x: 0, y: 0, z: 0}
 --- !u!1 &392784304
 GameObject:
   m_ObjectHideFlags: 0

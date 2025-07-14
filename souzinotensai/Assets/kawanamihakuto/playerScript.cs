@@ -45,7 +45,7 @@ public class player : MonoBehaviour
     void Start()
     {
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
-
+        _bubbleNumDirector = GameObject.Find("bubbleNum").GetComponent<bubbleNumDirector>();
 
         //UI
         // Slider.maxValue = reload;
@@ -82,6 +82,7 @@ public class player : MonoBehaviour
             _GaugeController.a = 0;
             Debug.Log("‹Ê‚P‚¾‚æ‚ñ");
             bulletsNum += 1;//’e‚ğ‚P‚Â‘‚â‚·
+            _bubbleNumDirector.b ++;
         }
 
         //W‚ğ‰Ÿ‚µ‚½‚Æ‚«

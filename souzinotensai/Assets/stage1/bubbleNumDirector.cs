@@ -15,8 +15,8 @@ public class bubbleNumDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Text bubbleNum = GetComponent<Text>();
+        Text _bubbleNum = bubbleNum.GetComponent<Text>();
 
-        bubbleNum.text = "bubble:"+b;
+        _bubbleNum.text = "bubble:"+b;
     }
 }

@@ -60,8 +60,6 @@ public class sakamoto_player : MonoBehaviour
 
         wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
         Debug.Log(wallLeftSidePos);
-        wallLeftSidePos.x += Mathf.Abs(transform.localScale.x / 2);
-        Debug.Log(wallLeftSidePos);
         wallRightSidePos = GameObject.Find("wallRight").transform.position;
         wallRightSidePos.x -= (transform.position.x / 2);
         wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
@@ -119,12 +117,14 @@ public class sakamoto_player : MonoBehaviour
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
             cullentPos.x = wallRightSidePos.x;
+            Debug.Log(cullentPos.x);
             transform.position = cullentPos;
         }
         if (transform.position.x < wallLeftSidePos.x) //ç∂ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
             cullentPos.x = wallLeftSidePos.x;
+            Debug.Log(cullentPos.x);
             transform.position = cullentPos;
         }
         if (transform.position.y > wallUpVerticalPos.y) //è„ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ

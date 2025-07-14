@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 103124820}
   - component: {fileID: 103124823}
   m_Layer: 3
-  m_Name: left_wall
+  m_Name: wallLeft
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,6 +386,52 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &114095411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 114095413}
+  - component: {fileID: 114095412}
+  m_Layer: 0
+  m_Name: Gauge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &114095412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114095411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c5d42b8f551bf4aab59a11e629c667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1935236919}
+  a: 0
+--- !u!4 &114095413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114095411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.386443, y: 1.0823964, z: 5.300403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177839177
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +684,7 @@ GameObject:
   - component: {fileID: 440522009}
   - component: {fileID: 440522012}
   m_Layer: 3
-  m_Name: right_wall
+  m_Name: wallRight
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,14 +1767,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 914898719618836374, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
   bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
   firepoit: {fileID: 1355996343}
+  wall: []
   speed: 0.1
+  cleaning: 0
+  reload: 10
   wallRightSidePos: {x: 0, y: 0, z: 0}
   wallLeftSidePos: {x: 0, y: 0, z: 0}
   wallUpVerticalPos: {x: 0, y: 0, z: 0}
   wallUnderVerticalPos: {x: 0, y: 0, z: 0}
+  wallThickY: {x: 0, y: 0, z: 0}
+  wallThicX: {x: 0, y: 0, z: 0}
   cullentPos: {x: 0, y: 0, z: 0}
 --- !u!212 &1608652486
 SpriteRenderer:
@@ -1868,7 +1918,7 @@ GameObject:
   - component: {fileID: 1854567328}
   - component: {fileID: 1854567331}
   m_Layer: 3
-  m_Name: top_wall
+  m_Name: wallUp
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2026,7 +2076,7 @@ GameObject:
   - component: {fileID: 1896122402}
   - component: {fileID: 1896122405}
   m_Layer: 3
-  m_Name: under_wall
+  m_Name: wallUnder
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,6 +2221,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1935236919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 914898719618836374, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
+  m_PrefabInstance: {fileID: 89798352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2194,3 +2255,4 @@ SceneRoots:
   - {fileID: 1192313122}
   - {fileID: 1390271220}
   - {fileID: 1146757907}
+  - {fileID: 114095413}

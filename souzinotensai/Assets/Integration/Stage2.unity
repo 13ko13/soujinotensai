@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5597976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5597978}
+  - component: {fileID: 5597977}
+  m_Layer: 0
+  m_Name: Gauge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &5597977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c5d42b8f551bf4aab59a11e629c667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1274130608}
+  a: 0
+--- !u!4 &5597978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5597976}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.386443, y: 1.0823964, z: 5.300403}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63553810
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +182,7 @@ GameObject:
   - component: {fileID: 63553812}
   - component: {fileID: 63553811}
   m_Layer: 3
-  m_Name: wall
+  m_Name: wallUnder
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +340,7 @@ GameObject:
   - component: {fileID: 192621383}
   - component: {fileID: 192621386}
   m_Layer: 3
-  m_Name: wall
+  m_Name: wallUp
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,7 +1076,7 @@ GameObject:
   - component: {fileID: 1210688409}
   - component: {fileID: 1210688408}
   m_Layer: 3
-  m_Name: wall
+  m_Name: wallLeft
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1253,6 +1299,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
+--- !u!114 &1274130608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 914898719618836374, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
+  m_PrefabInstance: {fileID: 1274130607}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282016010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,14 +1684,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 914898719618836374, guid: 3464d1a2c49be0b40a73114e04dbb1d4, type: 3}
   bubblePrefab: {fileID: 6453028639267694584, guid: 029ccfcda7225c34ca3b0ee5ef294fb5, type: 3}
   firepoit: {fileID: 1672704155}
+  wall: []
   speed: 0.1
+  cleaning: 0
+  reload: 10
   wallRightSidePos: {x: 0, y: 0, z: 0}
   wallLeftSidePos: {x: 0, y: 0, z: 0}
   wallUpVerticalPos: {x: 0, y: 0, z: 0}
   wallUnderVerticalPos: {x: 0, y: 0, z: 0}
+  wallThickY: {x: 0, y: 0, z: 0}
+  wallThicX: {x: 0, y: 0, z: 0}
   cullentPos: {x: 0, y: 0, z: 0}
 --- !u!212 &1792027727
 SpriteRenderer:
@@ -1816,7 +1877,7 @@ GameObject:
   - component: {fileID: 2067136183}
   - component: {fileID: 2067136186}
   m_Layer: 3
-  m_Name: wall
+  m_Name: wallRight
   m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1980,3 +2041,4 @@ SceneRoots:
   - {fileID: 63553814}
   - {fileID: 1282016012}
   - {fileID: 1056428635}
+  - {fileID: 5597978}

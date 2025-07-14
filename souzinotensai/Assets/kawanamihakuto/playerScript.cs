@@ -114,7 +114,7 @@ public class player : MonoBehaviour
             //dir = Dir.Right;
         }
 
-        if(transform.position.x > wallRightSidePos.x) //‰E‚Ì•Ç‚É‚ß‚è‚±‚ñ‚¾‚ç
+        if (transform.position.x > wallRightSidePos.x) //‰E‚Ì•Ç‚É‚ß‚è‚±‚ñ‚¾‚ç
         {
             //•Ç‚Ì’†‚Ö–ß‚·
             cullentPos.x = wallRightSidePos.x;

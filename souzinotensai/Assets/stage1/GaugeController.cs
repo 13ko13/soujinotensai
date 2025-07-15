@@ -7,7 +7,7 @@ public class GaugeController : MonoBehaviour
 {
    // player _player;
     public Slider slider;
-    public int a;
+    public int GaugeNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,6 @@ public class GaugeController : MonoBehaviour
     void Update()
     {
         //slider.value = _player.cleaning;
-        slider.value = a;
+        slider.value = GaugeNum;
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClearDirector : MonoBehaviour
+public class GameoverDirector2 : MonoBehaviour
 {
-    public string menuSceneName = "MenuScene";
+    public string menuSceneName = "Gameoverscene2";
     // Start is called before the first frame update
     void Start()
     {
@@ -17,15 +17,9 @@ public class ClearDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("stage1");
+            SceneManager.LoadScene("stage2");
         }
-
-
-
-
-
-
-        if (Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("MenuScene");
         }

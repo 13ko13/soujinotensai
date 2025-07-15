@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class bubbleNumDirector : MonoBehaviour
 {
     public GameObject bubbleNum;
-    public int b;
+    public int bNum;
     // Start is called before the first frame update
     void Start()
     {
-        
+        bNum = 0;
     }
 
     // Update is called once per frame
@@ -17,6 +17,6 @@ public class bubbleNumDirector : MonoBehaviour
     {
         Text _bubbleNum = bubbleNum.GetComponent<Text>();
 
-        _bubbleNum.text = "bubble:"+b;
+        _bubbleNum.text = "bubble:"+bNum;
     }
 }

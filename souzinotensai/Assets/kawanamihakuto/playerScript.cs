@@ -8,7 +8,7 @@ public class player : MonoBehaviour
 {
     //UI
    // public Slider Slider;
-   bubbleNumDirector _bubbleNumDirector;
+   public  bubbleNumDirector _bubbleNumDirector;
     GaugeController _GaugeController;
 
     public GameObject bubblePrefab;
@@ -45,7 +45,7 @@ public class player : MonoBehaviour
     void Start()
     {
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
-        _bubbleNumDirector = GameObject.Find("bubbleNum").GetComponent<bubbleNumDirector>();
+       // _bubbleNumDirector = GameObject.Find("bubbleNum").GetComponent<bubbleNumDirector>();
 
         //UI
         // Slider.maxValue = reload;
@@ -79,10 +79,10 @@ public class player : MonoBehaviour
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
-            _GaugeController.a = 0;
+            _GaugeController.GaugeNum = 0;
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
-            _bubbleNumDirector.b ++;
+            _bubbleNumDirector.bNum = bulletsNum;
         }
 
         //Wを押したとき
@@ -150,6 +150,8 @@ public class player : MonoBehaviour
 
             bulletsNum -= 1;//残り弾数を減らす
 
+            _bubbleNumDirector.bNum = bulletsNum;
+
             Instantiate(bubblePrefab, firepoit.position, transform.rotation);//球を発射
 
             //if (dir == Dir.Up)
@@ -191,7 +193,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("掃除メーター[+1]");
             cleaning += 1;
-            _GaugeController.a++;
+            _GaugeController.GaugeNum++;
             
         }
 

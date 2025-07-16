@@ -19,7 +19,7 @@ public class EnemyNumDirector : MonoBehaviour
     {
         Text _EnemyNum = EnemyNum.GetComponent<Text>();
 
-        _EnemyNum.text = "Enemy" + eNum;
+        _EnemyNum.text = "Enemy:" + eNum;
 
         enemybox = GameObject.FindGameObjectsWithTag("Enemy");
 

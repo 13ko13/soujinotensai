@@ -82,7 +82,7 @@ public class player : MonoBehaviour
             _GaugeController.GaugeNum = 0;
             Debug.Log("‹Ê‚P‚¾‚æ‚ñ");
             bulletsNum += 1;//’e‚ğ‚P‚Â‘‚â‚·
-            _bubbleNumDirector.bNum = bulletsNum;
+            //_bubbleNumDirector.bNum = bulletsNum;
         }
 
         //W‚ğ‰Ÿ‚µ‚½‚Æ‚«
@@ -150,7 +150,7 @@ public class player : MonoBehaviour
 
             bulletsNum -= 1;//c‚è’e”‚ğŒ¸‚ç‚·
 
-            _bubbleNumDirector.bNum = bulletsNum;
+           // _bubbleNumDirector.bNum = bulletsNum;
 
             Instantiate(bubblePrefab, firepoit.position, transform.rotation);//‹…‚ğ”­Ë
 

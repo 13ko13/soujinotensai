@@ -78,7 +78,7 @@ public class sakamoto_player : MonoBehaviour
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
-            _GaugeController.a = 0;
+            _GaugeController.GaugeNum = 0;
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
         }
@@ -191,7 +191,7 @@ public class sakamoto_player : MonoBehaviour
         {
             Debug.Log("掃除メーター[+1]");
             cleaning += 1;
-            _GaugeController.a++;
+            _GaugeController.GaugeNum++;
             
         }
 

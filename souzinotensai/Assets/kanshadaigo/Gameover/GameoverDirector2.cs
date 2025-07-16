@@ -17,7 +17,7 @@ public class GameoverDirector2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("stage2");
+            SceneManager.LoadScene("Stage2");
         }
         if(Input.GetKeyDown(KeyCode.Return))
         {

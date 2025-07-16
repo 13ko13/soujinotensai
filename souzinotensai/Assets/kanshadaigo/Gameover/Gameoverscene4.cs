@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TimeoverDirector2 : MonoBehaviour
+public class GameoverDirector4 : MonoBehaviour
 {
-    public string menuSceneName = "Timeoverscene2";
+    public string menuSceneName = "Gameoverscene4";
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +17,9 @@ public class TimeoverDirector2 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("Stage4");
         }
-        if (Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("MenuScene");
         }

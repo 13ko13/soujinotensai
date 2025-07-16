@@ -36,7 +36,7 @@ public class GameDirector4 : MonoBehaviour
         }
         if (playerBox.Length == 0)
         {
-            SceneManager.LoadScene("GameoverScene");
+            SceneManager.LoadScene("Gameoverscene4");
         }
 
 

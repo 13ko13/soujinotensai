@@ -36,7 +36,7 @@ public class GameDirector3 : MonoBehaviour
         }
         if (playerBox.Length == 0)
         {
-            SceneManager.LoadScene("GameoverScene");
+            SceneManager.LoadScene("GameoverScene3");
         }
 
 

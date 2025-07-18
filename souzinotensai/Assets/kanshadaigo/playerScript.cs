@@ -45,7 +45,6 @@ public class kanshadaigo_player : MonoBehaviour
     void Start()
     {
             GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-            gm.OnPlayerDeath(); // GameManager ‚ÌŠÖ”‚ğŒÄ‚Ô
 
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
        // _bubbleNumDirector = GameObject.Find("bubbleNum").GetComponent<bubbleNumDirector>();
@@ -78,7 +77,7 @@ public class kanshadaigo_player : MonoBehaviour
         {
             GameManager.Instance.OnPlayerDeath();
         }
-
+    
         //UI
         //  Slider.value = cleaning;
 

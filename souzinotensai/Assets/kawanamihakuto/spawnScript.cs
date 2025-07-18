@@ -7,9 +7,9 @@ public class spawnScript : MonoBehaviour
 {
     int rnd;
     public GameObject enemyPrefab;
-    public Transform firepoit1;
-    public Transform firepoit2;
-    public Transform firepoit3;
+    public Transform firepoint1;
+    public Transform firepoint2;
+    public Transform firepoint3;
     private GameObject[] enemybox;
     int temp;
     int num;
@@ -30,11 +30,11 @@ public class spawnScript : MonoBehaviour
     {
         rnd = Random.Range(1, 4);
         if (rnd == 1)
-            Instantiate(enemyPrefab,firepoit1.position,transform.rotation);
+            Instantiate(enemyPrefab,firepoint1.position,transform.rotation);
         if (rnd == 2)
-            Instantiate(enemyPrefab, firepoit2.position, transform.rotation);
+            Instantiate(enemyPrefab, firepoint2.position, transform.rotation);
         if (rnd == 3)
-            Instantiate(enemyPrefab, firepoit3.position, transform.rotation);
+            Instantiate(enemyPrefab, firepoint3.position, transform.rotation);
     }
 
 
@@ -45,7 +45,7 @@ public class spawnScript : MonoBehaviour
 
         time = Time.deltaTime;
        
-        if (temp==enemybox.Length&&num!=10)
+        if (temp==enemybox.Length&&num!=2)
         {
             
             Invoke("SpawnEnemy", 10.0f);

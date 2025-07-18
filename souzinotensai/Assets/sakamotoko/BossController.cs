@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BossController : MonoBehaviour
 {
     [SerializeField] private Image hpBarImage;
-    [SerializeField] private Sprite[] hpBarSprites; //スプライト4枚
+    [SerializeField] private Sprite[] hpBarSprites; //スプライト6枚
     [SerializeField] private int maxHP = 5;
     public int currentHP;
     public int dirt;

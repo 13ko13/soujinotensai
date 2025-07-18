@@ -23,8 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
-
+       
     }
 
     public void OnPlayerDeath()
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
 
         if (lives > 0)
         {
-            // 現在のシーンをリロードして復活
+            //現在のステージで死んでもがあるうちはそのステージで復活する
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
@@ -43,7 +42,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ResetLives(int newLives)
+    public void ResetLives(int newLives)   //残機を初期状態に戻す
     {
         lives = newLives;
     }

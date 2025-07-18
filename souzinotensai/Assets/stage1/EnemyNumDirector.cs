@@ -7,11 +7,12 @@ public class EnemyNumDirector : MonoBehaviour
 
     public GameObject EnemyNum;
     public int eNum;
+    public int temp;
     private GameObject[] enemybox;
     // Start is called before the first frame update
     void Start()
     {
-        eNum = 0;
+        eNum = 4;
     }
 
     // Update is called once per frame
@@ -23,7 +24,11 @@ public class EnemyNumDirector : MonoBehaviour
 
         enemybox = GameObject.FindGameObjectsWithTag("Enemy");
 
-        eNum = enemybox.Length;
+        if (temp == enemybox.Length)
+        {
+            eNum--;
+        }
+        temp = enemybox.Length - 1;
 
 
 

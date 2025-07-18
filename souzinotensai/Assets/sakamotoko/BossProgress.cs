@@ -26,8 +26,8 @@ public class BossProgress2 : MonoBehaviour
 
         if (timer <= 0f)
         {
-            SpawnDirtFromCollider();  // Bossのサイズに応じて汚れを生成
             TryMoveToNextGrid();      // グリッド移動
+            SpawnDirtFromCollider();  // Bossのサイズに応じて汚れを生成            
             timer = moveInterval;
         }
     }

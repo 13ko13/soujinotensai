@@ -132,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!50 &1212969068056060999
 Rigidbody2D:
@@ -219,10 +219,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
-  moveInterval: 0.78
+  moveInterval: 0.85
   moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.4
+  checkWallRadius: 1
+  checkEnemyRadius: 1
 --- !u!114 &1673976456077076957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,8 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617a857d37fa9054782e6ee691ca11a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpBarImage: {fileID: 0}
+  hpBarImage: {fileID: 8526804642813617023, guid: 3af539ad621ddeb46b0a7f779a7f6e12, type: 3}
   hpBarSprites:
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}

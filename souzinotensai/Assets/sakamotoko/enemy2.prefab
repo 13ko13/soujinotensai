@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 4743077964686802522}
   - component: {fileID: 1212969068056060999}
   - component: {fileID: 4795467259899698842}
-  - component: {fileID: 3457269040388338217}
+  - component: {fileID: 1988421635470504377}
+  - component: {fileID: 1673976456077076957}
   m_Layer: 7
   m_Name: enemy2
   m_TagString: Enemy
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5, y: 5.5, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &1212969068056060999
 Rigidbody2D:
@@ -205,7 +206,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
---- !u!114 &3457269040388338217
+--- !u!114 &1988421635470504377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,6 +215,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 7317717868088255395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924f7b219b0b10a4398071ab6711b401, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc27b12715f1af4c83b3602c2560607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
+  moveInterval: 0.78
+  moveDistance: 1
+  checkWallRadius: 0.2
+  checkEnemyRadius: 0.4
+--- !u!114 &1673976456077076957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317717868088255395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617a857d37fa9054782e6ee691ca11a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpBarImage: {fileID: 0}
+  hpBarSprites:
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  maxHP: 1
+  currentHP: 0
+  dirt: 0
+  Dirt: {fileID: 0}
+  Boss: {fileID: 0}

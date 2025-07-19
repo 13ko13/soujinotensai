@@ -920,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
+  time: 0
 --- !u!1 &467242540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca09cf22678eb7a46896310c4703a709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 30
+  timer: 5
+  lives: 3
+  gameoverscene: Gameoverscene
 --- !u!4 &623979393
 Transform:
   m_ObjectHideFlags: 0

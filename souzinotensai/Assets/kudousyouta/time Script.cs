@@ -10,6 +10,8 @@ public class timeScript : MonoBehaviour
     GameObject g;
     Text timeText;
     public float timer = 30;
+    public int lives = 3;
+    public string gameoverscene =  "Gameoverscene";
 
     public void Start()
     {
@@ -27,6 +29,21 @@ public class timeScript : MonoBehaviour
         {
             SceneManager.LoadScene("Timeoverscene");
         }
+    void timeUp()
+    {
+        lives--;
+
+       if (lives > 0)
+        {
+            //現在のステージで死んでもがあるうちはそのステージで復活する
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            // 残機0 → メニューシーンへ
+            SceneManager.LoadScene("MenuScene"); // ←シーン名は自分のに合わせて
+        }
+    }
 
     }
 }

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int lives = 3;
+    public int time;
 
     private void Awake()
     {

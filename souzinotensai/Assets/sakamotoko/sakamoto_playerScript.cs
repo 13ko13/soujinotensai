@@ -6,11 +6,11 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 public class sakamoto_player : MonoBehaviour
 {
-    //UI
-   // public Slider Slider;
-   bubbleNumDirector _bubbleNumDirector;
+    [SerializeField] private Sprite[] playerSprites; //スプライト4枚
+                                                   
+    bubbleNumDirector _bubbleNumDirector;
     GaugeController _GaugeController;
-
+    public SpriteRenderer SpriteRenderer;
     public GameObject bubblePrefab;
     public Transform firepoit;
     public GameObject[] wall;
@@ -31,17 +31,6 @@ public class sakamoto_player : MonoBehaviour
 
     public Vector3 cullentPos;
 
-
-    //enum Dir
-    //{
-    //    Up,
-    //    Down,
-    //    Left,
-    //    Right,
-    //}
-
-    //Dir dir = Dir.Up;
-    // Start is called before the first frame update
     void Start()
     {
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
@@ -66,6 +55,8 @@ public class sakamoto_player : MonoBehaviour
         wallUpVerticalPos.y -= (transform.position.y / 2);
         wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
         wallUnderVerticalPos.y += (transform.position.y / 2);
+
+        SpriteRenderer = GetComponent<SpriteRenderer>();
     }
    
     void Update()
@@ -87,6 +78,7 @@ public class sakamoto_player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
+            SpriteRenderer.sprite = playerSprites[0];  //上向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, 1);
             //dir = Dir.Up;
         }
@@ -94,13 +86,18 @@ public class sakamoto_player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             transform.eulerAngles = new Vector3(0, 0, 180);
+            SpriteRenderer.sprite = playerSprites[1];  //下向き
+            //SpriteRenderer.transform.eulerAngles = new Vector3(0, 0, 360);
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, -1);
             //dir = Dir.Down;
+            
         }
         //Aを押したとき
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 0, 90);
+            SpriteRenderer.sprite = playerSprites[2];  //右向き
+            //SpriteRenderer.transform.eulerAngles = new Vector3(0, 0, 0);
             this.GetComponent<Rigidbody2D>().position += new Vector2(-1, 0);
             //dir = Dir.Left;
         }
@@ -108,6 +105,8 @@ public class sakamoto_player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             transform.eulerAngles = new Vector3(0, 0, -90);
+            SpriteRenderer.sprite = playerSprites[3];  //右向き
+            //SpriteRenderer.transform.eulerAngles = new Vector3(0, 0, 0);
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
             // Debug.Log("4");
             //dir = Dir.Right;

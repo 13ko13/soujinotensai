@@ -1136,6 +1136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 30
+  lives: 3
+  gameoverscene: Gameoverscene
 --- !u!4 &623979393
 Transform:
   m_ObjectHideFlags: 0
@@ -1368,6 +1370,14 @@ PrefabInstance:
       propertyPath: hpBarImage
       value: 
       objectReference: {fileID: 1832605540}
+    - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.5
@@ -2191,6 +2201,10 @@ PrefabInstance:
       propertyPath: hpBarImage
       value: 
       objectReference: {fileID: 1832605540}
+    - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.5

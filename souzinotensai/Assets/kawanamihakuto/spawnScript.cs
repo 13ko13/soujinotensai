@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class spawnScript : MonoBehaviour
 {
@@ -25,6 +25,29 @@ public class spawnScript : MonoBehaviour
         timer = 0.1f;
         num = 0;
         spawn_pos = 0;
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        //ƒV[ƒ“–¼‚ðŽæ“¾
+        string sceneName = currentScene.name;
+
+        if (sceneName == "_Stage1")
+        {
+            num = 0;
+        }
+        if (sceneName == "_Stage2")
+        {
+            num = 1;
+        }
+        if (sceneName == "_Stage3")
+        {
+            num = 2;
+        }
+        if (sceneName == "_Stage4")
+        {
+            num = 3;
+        }
+
+
     }
 
     void SpawnEnemy()
@@ -44,15 +67,17 @@ public class spawnScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         enemybox = GameObject.FindGameObjectsWithTag("Enemy");
 
         time = Time.deltaTime;
        
-        if (temp==enemybox.Length&&num!=2)
+        if (temp==enemybox.Length&&num>0)
         {
             
             Invoke("SpawnEnemy", 10.0f);
-            num++;
+            num--;
             
         }
         temp = enemybox.Length-1;

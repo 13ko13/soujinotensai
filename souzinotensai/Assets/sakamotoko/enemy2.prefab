@@ -204,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
 --- !u!114 &1988421635470504377
 MonoBehaviour:
@@ -221,8 +221,8 @@ MonoBehaviour:
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
   moveInterval: 0.85
   moveDistance: 1
-  checkWallRadius: 1
-  checkEnemyRadius: 1
+  checkWallRadius: 2
+  checkEnemyRadius: 2
 --- !u!114 &1673976456077076957
 MonoBehaviour:
   m_ObjectHideFlags: 0

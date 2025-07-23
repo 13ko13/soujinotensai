@@ -405,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 161386397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: -17.5, y: 5.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2107,7 +2107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0aa3406e1615546a2597bfe912dae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bubbleNumDirector: {fileID: 595578773}
+  playerSprites: []
+  SpriteRenderer: {fileID: 0}
   bubblePrefab: {fileID: 6453028639267694584, guid: 27585f88ee108d24b8c6026771e2cfd3, type: 3}
   firepoit: {fileID: 1355996343}
   wall: []
@@ -2279,7 +2280,7 @@ Transform:
   m_GameObject: {fileID: 1820687054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5, y: 4.5, z: 0}
+  m_LocalPosition: {x: -17.5, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

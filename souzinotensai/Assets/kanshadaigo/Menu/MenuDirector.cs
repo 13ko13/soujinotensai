@@ -16,7 +16,7 @@ public class MenuDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Stage1");
+            SceneManager.LoadScene("_Stage1");
         }
     }
 }

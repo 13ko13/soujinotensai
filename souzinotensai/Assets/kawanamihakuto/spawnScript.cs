@@ -13,7 +13,7 @@ public class spawnScript : MonoBehaviour
     public Transform firepoint4;
     private GameObject[] enemybox;
     int temp;
-    int num;
+    int SceneNum;
     float time;
     float timer;
     int spawn_pos;
@@ -23,7 +23,7 @@ public class spawnScript : MonoBehaviour
         temp = 0;
         time = 0;
         timer = 0.1f;
-        num = 0;
+        SceneNum = 0;
         spawn_pos = 0;
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -32,19 +32,19 @@ public class spawnScript : MonoBehaviour
 
         if (sceneName == "_Stage1")
         {
-            num = 0;
+            SceneNum = 0;
         }
         if (sceneName == "_Stage2")
         {
-            num = 1;
+            SceneNum = 2;
         }
         if (sceneName == "_Stage3")
         {
-            num = 2;
+            SceneNum = 3;
         }
         if (sceneName == "_Stage4")
         {
-            num = 3;
+            SceneNum = 3;
         }
 
 
@@ -73,11 +73,11 @@ public class spawnScript : MonoBehaviour
 
         time = Time.deltaTime;
        
-        if (temp==enemybox.Length&&num>0)
+        if (temp==enemybox.Length&& SceneNum > 0)
         {
             
             Invoke("SpawnEnemy", 10.0f);
-            num--;
+            SceneNum--;
             
         }
         temp = enemybox.Length-1;

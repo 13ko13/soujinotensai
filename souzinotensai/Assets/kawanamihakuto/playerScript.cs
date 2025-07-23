@@ -10,7 +10,7 @@ public class player : MonoBehaviour
 
     bubbleNumDirector _bubbleNumDirector;
     GaugeController _GaugeController;
-
+    GameManager gm;
     public SpriteRenderer SpriteRenderer;
     public GameObject bubblePrefab;
     public Transform firepoit;
@@ -19,7 +19,7 @@ public class player : MonoBehaviour
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
-    public int reload = 10;//弾を増やす条件の値
+    public int reload = 15;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
 
 
@@ -34,10 +34,10 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
 
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
-
+        _bubbleNumDirector = GameObject.Find("BubbleNumDirector").GetComponent<bubbleNumDirector>();
         wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
         wallRightSidePos = GameObject.Find("wallRight").transform.position;
         wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
@@ -61,6 +61,7 @@ public class player : MonoBehaviour
             _GaugeController.GaugeNum = 0;
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
+            _bubbleNumDirector.bNum = bulletsNum;
         }
 
         //Wを押したとき
@@ -125,7 +126,7 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) //&& bulletsNum >= 1)
         {
             bulletsNum -= 1;//残り弾数を減らす
-
+            _bubbleNumDirector.bNum = bulletsNum;
             Instantiate(bubblePrefab, firepoit.position, transform.rotation);//球を発射
         }
     }
@@ -138,8 +139,11 @@ public class player : MonoBehaviour
 
             Destroy(gameObject);
 
-            SceneManager.LoadScene("GameoverScene");
+            gm.OnPlayerDeath();
 
+            //SceneManager.LoadScene("GameoverScene");
+
+            
         }
 
         if (collision.gameObject.CompareTag("dirt"))

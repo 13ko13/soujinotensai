@@ -17,7 +17,7 @@ public class GameoverDirector3 : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("Stage3");
+            SceneManager.LoadScene("_Stage3");
         }
         if(Input.GetKeyDown(KeyCode.Return))
         {

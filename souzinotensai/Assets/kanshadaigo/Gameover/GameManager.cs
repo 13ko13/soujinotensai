@@ -38,8 +38,10 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("gegegegegegeg");
             // 残機0 → メニューシーンへ
             SceneManager.LoadScene("MenuScene"); // ←シーン名は自分のに合わせて
+            lives = 3;
         }
     }
 

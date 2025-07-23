@@ -17,7 +17,7 @@ public class StageClearDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("Stage2");
+            SceneManager.LoadScene("_Stage2");
         }
         
 

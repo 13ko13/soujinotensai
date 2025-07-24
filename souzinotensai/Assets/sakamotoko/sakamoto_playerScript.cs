@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
+
 public class sakamoto_player : MonoBehaviour
 {
     [SerializeField] private Sprite[] playerSprites; //スプライト4枚
@@ -13,7 +14,7 @@ public class sakamoto_player : MonoBehaviour
     public SpriteRenderer SpriteRenderer;
     public GameObject bubblePrefab;
     public Transform firepoit;
-    public GameObject[] wall;
+    //public GameObject[] wall;
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
@@ -22,14 +23,23 @@ public class sakamoto_player : MonoBehaviour
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
 
 
-    public Vector3 wallRightSidePos;
-    public Vector3 wallLeftSidePos;
-    public Vector3 wallUpVerticalPos;
-    public Vector3 wallUnderVerticalPos;
+    //public Vector3 wallRightSidePos;
+    //public Vector3 wallLeftSidePos;
+    //public Vector3 wallUpVerticalPos;
+    //public Vector3 wallUnderVerticalPos;
     public Vector3 wallThickY;
     public Vector3 wallThicX;
 
     public Vector3 cullentPos;
+
+    public GameObject wallRight;
+    public GameObject wallLeft;
+    public GameObject wallUp;
+    public GameObject wallUnder;
+
+    Vector3 wallXScale = new Vector3(2.0f,0.0f,0.0f);
+    Vector3 wallYScale = new Vector3(0.0f,2.0f,0.0f);
+
 
     void Start()
     {
@@ -45,16 +55,16 @@ public class sakamoto_player : MonoBehaviour
         //wallUpVerticalPos = new Vector3(0, 7.5f, 0);
         //wallUnderVerticalPos = new Vector3(0, -7.5f, 0);
 
-        
 
-        wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
-        Debug.Log(wallLeftSidePos);
-        wallRightSidePos = GameObject.Find("wallRight").transform.position;
-        wallRightSidePos.x -= (transform.position.x / 2);
-        wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
-        wallUpVerticalPos.y -= (transform.position.y / 2);
-        wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
-        wallUnderVerticalPos.y += (transform.position.y / 2);
+
+        //wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
+        //Debug.Log(wallLeftSidePos);
+        //wallRightSidePos = GameObject.Find("wallRight").transform.position;
+        //wallRightSidePos.x -= (transform.position.x / 2);
+        //wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
+        //wallUpVerticalPos.y -= (transform.position.y / 2);
+        //wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
+        //wallUnderVerticalPos.y += (transform.position.y / 2);
 
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -64,7 +74,8 @@ public class sakamoto_player : MonoBehaviour
         //UI
       //  Slider.value = cleaning;
 
-        cullentPos = transform.position;
+        
+
         if(cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
@@ -112,30 +123,34 @@ public class sakamoto_player : MonoBehaviour
             //dir = Dir.Right;
         }
 
-        if(transform.position.x > wallRightSidePos.x) //右の壁にめりこんだら
+        cullentPos = transform.position;
+
+        if (transform.position.x > wallRight.transform.position.x - wallXScale.x) //右の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.x = wallRightSidePos.x;
-            Debug.Log(cullentPos.x);
+            cullentPos.x = wallRight.transform.position.x - wallXScale.x;
+            cullentPos.z = wallRight.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.x < wallLeftSidePos.x) //左の壁にめりこんだら
+        if (transform.position.x < wallLeft.transform.position.x + wallXScale.x) //左の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.x = wallLeftSidePos.x;
-            Debug.Log(cullentPos.x);
+            cullentPos.x = wallLeft.transform.position.x + wallXScale.x;
+            cullentPos.z = wallLeft.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y > wallUpVerticalPos.y) //上の壁にめりこんだら
+        if (transform.position.y > wallUp.transform.position.y - wallYScale.y) //上の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.y = wallUpVerticalPos.y;
+            cullentPos.y = wallUp.transform.position.y - wallYScale.y;
+            cullentPos.z = wallUp.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y < wallUnderVerticalPos.y) //下の壁にめりこんだら
+        if (transform.position.y < wallUnder.transform.position.y + wallYScale.y) //下の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.y = wallUnderVerticalPos.y;
+            cullentPos.y = wallUnder.transform.position.y + wallYScale.y;
+            cullentPos.z = wallUnder.transform.position.z;
             transform.position = cullentPos;
         }
 

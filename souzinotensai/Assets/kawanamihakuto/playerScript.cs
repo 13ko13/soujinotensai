@@ -34,7 +34,7 @@ public class player : MonoBehaviour
 
     void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
+        //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
 
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
         _bubbleNumDirector = GameObject.Find("BubbleNumDirector").GetComponent<bubbleNumDirector>();
@@ -139,7 +139,7 @@ public class player : MonoBehaviour
 
             Destroy(gameObject);
 
-            gm.OnPlayerDeath();
+            //gm.OnPlayerDeath();
 
             //SceneManager.LoadScene("GameoverScene");
 

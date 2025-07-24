@@ -76,7 +76,7 @@ public class BossProgress2 : MonoBehaviour
         {
             Vector3 nextPos = transform.position + dir * moveDistance;
 
-            if (!IsWallAtPosition(nextPos) && !IsEnemyAtPosition(nextPos))
+            if (!IsWallAtPosition(nextPos) /*&& !IsEnemyAtPosition(nextPos)*/)
             {
                 // 壁でも敵でもなければ移動！
                 transform.position = nextPos;

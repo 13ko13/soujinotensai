@@ -17,7 +17,7 @@ public class ClearDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("stage1");
+            SceneManager.LoadScene("_Stage1");
         }
 
 

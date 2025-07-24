@@ -17,7 +17,7 @@ public class TimeoverDirector : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("stage1");
+            SceneManager.LoadScene("_Stage1");
         }
         if (Input.GetKeyDown(KeyCode.Return))
         {

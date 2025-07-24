@@ -169,13 +169,21 @@ PrefabInstance:
       propertyPath: checkEnemyRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkWallRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.z
@@ -209,12 +217,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4743077964686802522, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4743077964686802522, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: m_Size.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7317717868088255395, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_Name
       value: enemy2 (5)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5938458014542633050, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+    - {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -637,13 +654,21 @@ PrefabInstance:
       propertyPath: checkEnemyRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkWallRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.z
@@ -683,6 +708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5938458014542633050, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+    - {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -710,8 +736,8 @@ MonoBehaviour:
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
   moveInterval: 0.98
   moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.4
+  checkWallRadius: 2
+  checkEnemyRadius: 2
 --- !u!1001 &464183700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -736,13 +762,17 @@ PrefabInstance:
       propertyPath: checkEnemyRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkWallRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.z
@@ -782,6 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5938458014542633050, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+    - {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -809,8 +840,8 @@ MonoBehaviour:
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
   moveInterval: 0.99
   moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.4
+  checkWallRadius: 2
+  checkEnemyRadius: 2
 --- !u!1 &485118343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &771629665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1399,8 +1430,8 @@ MonoBehaviour:
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
   moveInterval: 0.99
   moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.4
+  checkWallRadius: 2
+  checkEnemyRadius: 2
 --- !u!1001 &1143988996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2246,8 +2277,8 @@ MonoBehaviour:
   dirt: {fileID: 6608270351922111920, guid: 0a9d2b94667c4604faecd1c9bb52aa95, type: 3}
   moveInterval: 0.99
   moveDistance: 1
-  checkWallRadius: 0.2
-  checkEnemyRadius: 0.4
+  checkWallRadius: 2
+  checkEnemyRadius: 2
 --- !u!1001 &1520002320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2831,13 +2862,21 @@ PrefabInstance:
       propertyPath: checkEnemyRadius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkWallRadius
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+      propertyPath: checkEnemyRadius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.5
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4465454590817964422, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2877,6 +2916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5938458014542633050, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
+    - {fileID: 1988421635470504377, guid: cdde8622fcf194044954cce1cc9c2511, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

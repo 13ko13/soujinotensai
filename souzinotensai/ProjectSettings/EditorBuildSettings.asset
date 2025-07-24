@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Integration/MenuScene.unity
     guid: 8c206df13bce93b4daf02b9d81739c8e
   - enabled: 1
-    path: Assets/Integration/_Stage1.unity
+    path: Assets/Integration/_stage1.unity
     guid: e8a254d5b29cd274487a8b52fc5359f1
   - enabled: 1
     path: Assets/kanshadaigo/stageclear/StageClearScene.unity

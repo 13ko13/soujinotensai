@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class spawnScript : MonoBehaviour
 {
     int rnd;
-    public GameObject enemyPrefab;
+    public GameObject enemyPrefab2_2;
     public Transform firepoint1;
     public Transform firepoint2;
     public Transform firepoint3;
@@ -54,13 +54,13 @@ public class spawnScript : MonoBehaviour
     {
         rnd = Random.Range(1, 5);
         if (rnd == 1)
-            Instantiate(enemyPrefab,firepoint1.position,transform.rotation);
+            Instantiate(enemyPrefab2_2,firepoint1.position,transform.rotation);
         if (rnd == 2)
-            Instantiate(enemyPrefab, firepoint2.position, transform.rotation);
+            Instantiate(enemyPrefab2_2, firepoint2.position, transform.rotation);
         if (rnd == 3)
-            Instantiate(enemyPrefab, firepoint3.position, transform.rotation);
+            Instantiate(enemyPrefab2_2, firepoint3.position, transform.rotation);
         if (rnd == 4)
-            Instantiate(enemyPrefab, firepoint4.position, transform.rotation);
+            Instantiate(enemyPrefab2_2, firepoint4.position, transform.rotation);
     }
 
 

@@ -4,22 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
-public class player : MonoBehaviour
+public class player4 : MonoBehaviour
 {
     [SerializeField] private Sprite[] playerSprites; //スプライト4枚
 
     bubbleNumDirector _bubbleNumDirector;
-    GaugeController _GaugeController;
+    GaugeController2 _GaugeController2;
     GameManager gm;
     public SpriteRenderer SpriteRenderer;
-    public GameObject bubblePrefab;
+    public GameObject bubblePrefab2;
     public Transform firepoit;
     public GameObject[] wall;
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
-    public int reload = 15;//弾を増やす条件の値
+    public int reload = 30;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
     int frame=0;
 
@@ -36,7 +36,7 @@ public class player : MonoBehaviour
     {
         //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
 
-        _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
+        _GaugeController2 = GameObject.Find("Gauge").GetComponent<GaugeController2>();
         _bubbleNumDirector = GameObject.Find("BubbleNumDirector").GetComponent<bubbleNumDirector>();
         wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
         wallRightSidePos = GameObject.Find("wallRight").transform.position;
@@ -59,7 +59,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
             cleaning = 0;//掃除した数のリセット
-            _GaugeController.GaugeNum = 0;
+            _GaugeController2.GaugeNum = 0;
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
             _bubbleNumDirector.bNum = bulletsNum;
@@ -83,7 +83,7 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.eulerAngles = new Vector3(0, 0, 90);
-            SpriteRenderer.sprite = playerSprites[2];  //右向き
+            SpriteRenderer.sprite = playerSprites[2];  //左向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(-1, 0);
         }
         //Dを押したとき
@@ -128,7 +128,7 @@ public class player : MonoBehaviour
         {
             bulletsNum -= 1;//残り弾数を減らす
             _bubbleNumDirector.bNum = bulletsNum;
-            Instantiate(bubblePrefab, firepoit.position, transform.rotation);//球を発射
+            Instantiate(bubblePrefab2, firepoit.position, transform.rotation);//球を発射
         }
     }
 
@@ -151,7 +151,7 @@ public class player : MonoBehaviour
         {
             Debug.Log("掃除メーター[+1]");
             cleaning += 1;
-            _GaugeController.GaugeNum++;
+            _GaugeController2.GaugeNum++;
 
         }
 

@@ -14,7 +14,7 @@ public class BossController : MonoBehaviour
     public int dirt;
     public GameObject Dirt;
     public GameObject Boss;
-
+    int temp = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,12 +35,18 @@ public class BossController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        temp++;
         if (collision.gameObject.CompareTag("bubble")) // 球かどうかのタグをチェック
         {
             Debug.Log("bubble");
             Destroy(collision.gameObject); // オブジェクトを破壊
-            TakeDamage();
+
+            if(temp >= 2)
+            {
+                temp = 0;
+                TakeDamage();
+            }
+            
         }
 
 

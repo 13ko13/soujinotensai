@@ -19,7 +19,7 @@ public class player : MonoBehaviour
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
-    public int reload = 15;//弾を増やす条件の値
+    public int reload = 20;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
     int frame=0;
 

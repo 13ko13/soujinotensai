@@ -32,7 +32,7 @@ public class EnemyNumDirector : MonoBehaviour
         }
         if (sceneName == "_Stage4")
         {
-            eNum = 6;
+            eNum = 7;
         }
     }
 
@@ -41,7 +41,7 @@ public class EnemyNumDirector : MonoBehaviour
     {
         Text _EnemyNum = EnemyNum.GetComponent<Text>();
 
-        _EnemyNum.text = "Enemy:" + eNum;
+        _EnemyNum.text = "EnemyÅ~" + eNum;
 
         enemybox = GameObject.FindGameObjectsWithTag("Enemy");
 

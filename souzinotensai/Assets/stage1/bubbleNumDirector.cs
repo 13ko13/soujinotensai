@@ -17,7 +17,7 @@ public class bubbleNumDirector : MonoBehaviour
     {
         Text _bubbleNum = bubbleNum.GetComponent<Text>();
 
-        _bubbleNum.text = "bubble:"+bNum;
+        _bubbleNum.text = ""+bNum;
 
         
     }

@@ -13,7 +13,7 @@ public class GaugeController : MonoBehaviour
     {
      //   _player= GameObject.Find("player").GetComponent<player>();
         //UI
-        slider.maxValue = 15;//_player.reload;
+        slider.maxValue = 20;//_player.reload;
         slider.value = 0;//_player.cleaning;
     }
 

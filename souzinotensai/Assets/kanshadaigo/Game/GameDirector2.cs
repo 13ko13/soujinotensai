@@ -27,7 +27,7 @@ public class GameDirector2 : MonoBehaviour
         dirtBox = GameObject.FindGameObjectsWithTag("dirt");
         playerBox = GameObject.FindGameObjectsWithTag("player");
 
-        if (dirtBox.Length == 0)
+        if (dirtBox.Length == 0 || Input.GetKeyDown(KeyCode.Tab))
         {
             Debug.Log("ステージクリア");
             SceneManager.LoadScene("StageClearScene2");

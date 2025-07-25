@@ -32,6 +32,7 @@ public class player4 : MonoBehaviour
 
     public Vector3 cullentPos;
 
+    public AudioSource launchSoundSource;//効果音AudioSource
     void Start()
     {
         //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
@@ -129,6 +130,7 @@ public class player4 : MonoBehaviour
             bulletsNum -= 1;//残り弾数を減らす
             _bubbleNumDirector.bNum = bulletsNum;
             Instantiate(bubblePrefab2, firepoit.position, transform.rotation);//球を発射
+            PlayLaunchSound();
         }
     }
 
@@ -155,6 +157,18 @@ public class player4 : MonoBehaviour
 
         }
 
+    }
+    void PlayLaunchSound()
+    {
+        //AudioSourceで効果音を再生
+        if (launchSoundSource != null)
+        {
+            launchSoundSource.Play();
+        }
+        else
+        {
+            Debug.Log("AudioSourceが設定されていない");
+        }
     }
 
 

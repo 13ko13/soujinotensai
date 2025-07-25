@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuMove : MonoBehaviour
 {
+   
     int num;
     int num2;
     // Start is called before the first frame update
@@ -33,5 +34,7 @@ public class MenuMove : MonoBehaviour
             }
             
         }    
+       
     }
+    
 }

@@ -33,6 +33,7 @@ public class player4 : MonoBehaviour
     public Vector3 cullentPos;
 
     public AudioSource launchSoundSource;//効果音AudioSource
+    public AudioSource dirtSound;
     void Start()
     {
         //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
@@ -154,7 +155,7 @@ public class player4 : MonoBehaviour
             Debug.Log("掃除メーター[+1]");
             cleaning += 1;
             _GaugeController2.GaugeNum++;
-
+            PlayDirtSound();
         }
 
     }
@@ -164,6 +165,19 @@ public class player4 : MonoBehaviour
         if (launchSoundSource != null)
         {
             launchSoundSource.Play();
+        }
+        else
+        {
+            Debug.Log("AudioSourceが設定されていない");
+        }
+    }
+
+    void PlayDirtSound()
+    {
+        //AudioSourceで効果音を再生
+        if (dirtSound != null)
+        {
+            dirtSound.Play();
         }
         else
         {

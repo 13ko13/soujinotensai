@@ -5,30 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class MenuDirector : MonoBehaviour
 {
+    int num;
+    int num2;
     public AudioSource launchSoundSource;//Œø‰Ê‰¹AudioSource
     // Start is called before the first frame update
     void Start()
     {
-        
+        num = 0;
+        num2 = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (num2 <= 0)
         {
-
-            PlayLaunchSound();
-            while(true)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (!launchSoundSource.isPlaying)
-                {
-                    SceneManager.LoadScene("_Stage1");
-                }
+                num2++;
+                PlayLaunchSound();
             }
-            
-            
         }
+        
+        if(num>=1)
+        {
+            if (!launchSoundSource.isPlaying)
+            {
+                SceneManager.LoadScene("_Stage1");
+            }
+        }
+        
     }
     void PlayLaunchSound()
     {
@@ -36,6 +42,7 @@ public class MenuDirector : MonoBehaviour
         if (launchSoundSource != null)
         {
             launchSoundSource.Play();
+            num++;
         }
         else
         {

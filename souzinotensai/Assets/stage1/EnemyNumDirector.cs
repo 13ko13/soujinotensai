@@ -10,6 +10,8 @@ public class EnemyNumDirector : MonoBehaviour
     int eNum = 0;
     int temp;
     private GameObject[] enemybox;
+
+    public AudioSource enemySound;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +50,24 @@ public class EnemyNumDirector : MonoBehaviour
         if (temp == enemybox.Length)
         {
             eNum--;
+            EnemySound();
         }
         temp = enemybox.Length - 1;
 
 
 
+    }
+
+    void EnemySound()
+    {
+        //AudioSource‚ÅŒø‰Ê‰¹‚ğÄ¶
+        if (enemySound != null)
+        {
+            enemySound.Play();
+        }
+        else
+        {
+            Debug.Log("AudioSource‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¢");
+        }
     }
 }

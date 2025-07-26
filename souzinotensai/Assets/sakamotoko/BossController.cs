@@ -16,6 +16,8 @@ public class BossController : MonoBehaviour
     public GameObject Boss;
     int temp = 0;
 
+    public AudioSource hitBubble;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,22 +61,27 @@ public class BossController : MonoBehaviour
         if (currentHP >= 5.0f)
         {
             hpBarImage.sprite = hpBarSprites[0]; //最大HP
+            HitBubbleSound();
         }
         else if (currentHP >= 4.0f)
         {
             hpBarImage.sprite = hpBarSprites[1]; //1ダメージくらった時
+            HitBubbleSound();
         }
         else if (currentHP >= 3.0f)
         {
             hpBarImage.sprite = hpBarSprites[2]; //2ダメージ食らったとき
+            HitBubbleSound();
         }
         else if (currentHP >= 2.0f)
         {
             hpBarImage.sprite = hpBarSprites[3]; //3ダメージくらうと赤色ゲージ
+            HitBubbleSound();
         }
         else if (currentHP >= 1.0f)
         {
             hpBarImage.sprite = hpBarSprites[4]; //4ダメージ食らったとき
+            HitBubbleSound();
         }
         else
         {
@@ -87,6 +94,17 @@ public class BossController : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    void HitBubbleSound()
+    {
+        //AudioSourceで効果音を再生
+        if (hitBubble != null)
+        {
+            hitBubble.Play();
+        }
+        else
+        {
+            Debug.Log("AudioSourceが設定されていない");
+        }
+    }
 
 }

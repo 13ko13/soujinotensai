@@ -34,6 +34,9 @@ public class player : MonoBehaviour
 
     public AudioSource launchSoundSource;//Œø‰Ê‰¹AudioSource
     public AudioSource dirtSound;
+    public AudioSource chargeBubble;
+
+    public bool isDie;
     void Start()
     {
         //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ƒQ[ƒ€ƒ}ƒl[ƒWƒƒ[
@@ -46,6 +49,8 @@ public class player : MonoBehaviour
         wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
 
         SpriteRenderer = GetComponent<SpriteRenderer>();
+
+        isDie = false;
     }
 
     void Update()
@@ -65,6 +70,7 @@ public class player : MonoBehaviour
             Debug.Log("‹Ê‚P‚¾‚æ‚ñ");
             bulletsNum += 1;//’e‚ğ‚P‚Â‘‚â‚·
             _bubbleNumDirector.bNum = bulletsNum;
+            ChargeBubbleSound();
         }
 
         //W‚ğ‰Ÿ‚µ‚½‚Æ‚«
@@ -142,8 +148,7 @@ public class player : MonoBehaviour
             Debug.Log("Enemy");
 
             Destroy(gameObject);
-
-            //gm.OnPlayerDeath();
+            isDie = true;
 
             //SceneManager.LoadScene("GameoverScene");
 
@@ -184,6 +189,14 @@ public class player : MonoBehaviour
         else
         {
             Debug.Log("AudioSource‚ªİ’è‚³‚ê‚Ä‚¢‚È‚¢");
+        }
+    }
+
+    void ChargeBubbleSound()
+    {
+        if (chargeBubble != null)
+        {
+            chargeBubble.Play();
         }
     }
 }

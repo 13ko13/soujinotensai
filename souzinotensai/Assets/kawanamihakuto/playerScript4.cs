@@ -34,6 +34,7 @@ public class player4 : MonoBehaviour
 
     public AudioSource launchSoundSource;//効果音AudioSource
     public AudioSource dirtSound;
+    public AudioSource chargeBubble;
     void Start()
     {
         //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
@@ -65,6 +66,7 @@ public class player4 : MonoBehaviour
             Debug.Log("玉１だよん");
             bulletsNum += 1;//弾を１つ増やす
             _bubbleNumDirector.bNum = bulletsNum;
+            ChargeBubbleSound();
         }
 
         //Wを押したとき
@@ -185,6 +187,13 @@ public class player4 : MonoBehaviour
         }
     }
 
+    void ChargeBubbleSound()
+    {
+        if(chargeBubble != null)
+        {
+            chargeBubble.Play();
+        }
+    }
 
 }
 

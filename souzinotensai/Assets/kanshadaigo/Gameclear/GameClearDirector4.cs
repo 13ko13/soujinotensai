@@ -82,5 +82,4 @@ public class GameDirector4 : MonoBehaviour
 
         return stageNum;
     }
-
 }

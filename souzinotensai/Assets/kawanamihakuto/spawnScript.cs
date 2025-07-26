@@ -17,6 +17,8 @@ public class spawnScript : MonoBehaviour
     float time;
     float timer;
     int spawn_pos;
+
+    public AudioSource respawnSound;    //ìGÉäÉXÉ|Å[ÉìéûÇÃâπ
     // Start is called before the first frame update
     void Start()
     {
@@ -54,13 +56,25 @@ public class spawnScript : MonoBehaviour
     {
         rnd = Random.Range(1, 5);
         if (rnd == 1)
-            Instantiate(enemyPrefab2_2,firepoint1.position,transform.rotation);
+        {
+            Instantiate(enemyPrefab2_2, firepoint1.position, transform.rotation);
+            EnemyRespawnSound();
+        }
         if (rnd == 2)
+        {
             Instantiate(enemyPrefab2_2, firepoint2.position, transform.rotation);
+            EnemyRespawnSound();
+        }
         if (rnd == 3)
+        {
             Instantiate(enemyPrefab2_2, firepoint3.position, transform.rotation);
+            EnemyRespawnSound();
+        }
         if (rnd == 4)
+        {
             Instantiate(enemyPrefab2_2, firepoint4.position, transform.rotation);
+            EnemyRespawnSound();
+        }    
     }
 
 
@@ -81,5 +95,13 @@ public class spawnScript : MonoBehaviour
             
         }
         temp = enemybox.Length-1;
+    }
+
+    void EnemyRespawnSound()
+    {
+        if (respawnSound != null)
+        {
+            respawnSound.Play();
+        }
     }
 }

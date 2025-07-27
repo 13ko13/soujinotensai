@@ -52,7 +52,6 @@ public class player4 : MonoBehaviour
             GameManager.Instance.OnPlayerDeath();
         }
 
-        cullentPos = transform.position;
         if (cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
@@ -92,6 +91,8 @@ public class player4 : MonoBehaviour
             SpriteRenderer.sprite = playerSprites[3];  //右向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
         }
+
+        cullentPos = transform.position; //現在の位置を記憶
 
         if (transform.position.x > wallRight.transform.position.x - wallXScale.x) //右の壁にめりこんだら
         {

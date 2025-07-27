@@ -30,13 +30,13 @@ public class GameDirector2 : MonoBehaviour
         if (dirtBox.Length == 0 || Input.GetKeyDown(KeyCode.Tab))
         {
             Debug.Log("ステージクリア");
-            SceneManager.LoadScene("StageClearScene2");
+            SceneManager.LoadScene("Stage2ClearScene");
             CountStage();
 
         }
         if (playerBox.Length == 0)
         {
-            SceneManager.LoadScene("GameoverScene2");
+            SceneManager.LoadScene("GameoverScene");
         }
 
 

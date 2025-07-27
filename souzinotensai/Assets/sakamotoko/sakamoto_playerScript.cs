@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 
 public class sakamoto_player : MonoBehaviour
@@ -37,8 +36,8 @@ public class sakamoto_player : MonoBehaviour
     public GameObject wallUp;
     public GameObject wallUnder;
 
-    Vector3 wallXScale = new Vector3(2.0f,0.0f,0.0f);
-    Vector3 wallYScale = new Vector3(0.0f,2.0f,0.0f);
+    public Vector3 wallXScale;
+    public Vector3 wallYScale;
 
 
     void Start()

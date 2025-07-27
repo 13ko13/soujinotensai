@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 public class player : MonoBehaviour
 {
@@ -16,20 +15,19 @@ public class player : MonoBehaviour
     public Transform firepoit;
     public GameObject[] wall;
     public float speed = 0.1f;
-    private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
     private float timer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
     public int reload = 20;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
     int frame=0;
 
-    public Vector3 wallRightSidePos;
-    public Vector3 wallLeftSidePos;
-    public Vector3 wallUpVerticalPos;
-    public Vector3 wallUnderVerticalPos;
-    public Vector3 wallThickY;
-    public Vector3 wallThicX;
+    public GameObject wallRight;
+    public GameObject wallLeft;
+    public GameObject wallUp;
+    public GameObject wallUnder;
 
+    public Vector3 wallXScale;
+    public Vector3 wallYScale;
     public Vector3 cullentPos;
 
     public AudioSource launchSoundSource;//効果音AudioSource
@@ -39,18 +37,16 @@ public class player : MonoBehaviour
     public bool isDie;
     void Start()
     {
-        //gm = GameObject.Find("GameManager").GetComponent<GameManager>(); //ゲームマネージャー
-
         _GaugeController = GameObject.Find("Gauge").GetComponent<GaugeController>();
         _bubbleNumDirector = GameObject.Find("BubbleNumDirector").GetComponent<bubbleNumDirector>();
-        wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
-        wallRightSidePos = GameObject.Find("wallRight").transform.position;
-        wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
-        wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
 
         SpriteRenderer = GetComponent<SpriteRenderer>();
 
         isDie = false;
+        Debug.Log(wallUnder.transform.position);
+
+        wallXScale = wallRight.transform.localScale;
+        wallYScale = wallUnder.transform.localScale;
     }
 
     void Update()
@@ -61,7 +57,6 @@ public class player : MonoBehaviour
             GameManager.Instance.OnPlayerDeath();
         }
 
-        cullentPos = transform.position;
         if (cleaning >= reload)//一定数汚れを掃除したら
         {
             Debug.Log("弾数[+1]  掃除メーターリセット");
@@ -102,29 +97,35 @@ public class player : MonoBehaviour
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
         }
 
-        if (transform.position.x > wallRightSidePos.x) //右の壁にめりこんだら
+        cullentPos = transform.position; //現在の位置を記憶
+
+        if (transform.position.x > wallRight.transform.position.x - wallXScale.x) //右の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.x = wallRightSidePos.x;
+            cullentPos.x = wallRight.transform.position.x - wallXScale.x;
+            cullentPos.z = wallRight.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.x < wallLeftSidePos.x) //左の壁にめりこんだら
+        if (transform.position.x < wallLeft.transform.position.x + wallXScale.x) //左の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.x = wallLeftSidePos.x;
-            Debug.Log(cullentPos.x);
+            cullentPos.x = wallLeft.transform.position.x + wallXScale.x;
+            cullentPos.z = wallLeft.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y > wallUpVerticalPos.y) //上の壁にめりこんだら
+        if (transform.position.y > wallUp.transform.position.y - wallYScale.y) //上の壁にめりこんだら
         {
             //壁の中へ戻す
-            cullentPos.y = wallUpVerticalPos.y;
+            cullentPos.y = wallUp.transform.position.y - wallYScale.y;
+            cullentPos.z = wallUp.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y < wallUnderVerticalPos.y) //下の壁にめりこんだら
+        if (transform.position.y < wallUnder.transform.position.y + wallYScale.y) //下の壁にめりこんだら
         {
+            Debug.Log("壁");
             //壁の中へ戻す
-            cullentPos.y = wallUnderVerticalPos.y;
+            cullentPos.y = wallUnder.transform.position.y + wallYScale.y;
+            cullentPos.z = wallUnder.transform.position.z;
             transform.position = cullentPos;
         }
 

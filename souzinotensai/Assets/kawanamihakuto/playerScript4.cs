@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Experimental.GraphView.GraphView;
 using UnityEngine.UI;
 public class player4 : MonoBehaviour
 {
@@ -23,12 +22,13 @@ public class player4 : MonoBehaviour
     int bulletsNum = 0;//écÇËíeêî(Å™ÇÃèåèÇ≈í«â¡Ç≥ÇÍÇÈ)
     int frame=0;
 
-    public Vector3 wallRightSidePos;
-    public Vector3 wallLeftSidePos;
-    public Vector3 wallUpVerticalPos;
-    public Vector3 wallUnderVerticalPos;
-    public Vector3 wallThickY;
-    public Vector3 wallThicX;
+    public GameObject wallRight;
+    public GameObject wallLeft;
+    public GameObject wallUp;
+    public GameObject wallUnder;
+
+    Vector3 wallXScale = new Vector3(2.0f, 0.0f, 0.0f);
+    Vector3 wallYScale = new Vector3(0.0f, 2.0f, 0.0f);
 
     public Vector3 cullentPos;
 
@@ -41,11 +41,6 @@ public class player4 : MonoBehaviour
 
         _GaugeController2 = GameObject.Find("Gauge").GetComponent<GaugeController2>();
         _bubbleNumDirector = GameObject.Find("BubbleNumDirector").GetComponent<bubbleNumDirector>();
-        wallLeftSidePos = GameObject.Find("wallLeft").transform.position;
-        wallRightSidePos = GameObject.Find("wallRight").transform.position;
-        wallUpVerticalPos = GameObject.Find("wallUp").transform.position;
-        wallUnderVerticalPos = GameObject.Find("wallUnder").transform.position;
-
         SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -98,29 +93,32 @@ public class player4 : MonoBehaviour
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
         }
 
-        if (transform.position.x > wallRightSidePos.x) //âEÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
+        if (transform.position.x > wallRight.transform.position.x - wallXScale.x) //âEÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
-            cullentPos.x = wallRightSidePos.x;
+            cullentPos.x = wallRight.transform.position.x - wallXScale.x;
+            cullentPos.z = wallRight.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.x < wallLeftSidePos.x) //ç∂ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
+        if (transform.position.x < wallLeft.transform.position.x + wallXScale.x) //ç∂ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
-            cullentPos.x = wallLeftSidePos.x;
-            Debug.Log(cullentPos.x);
+            cullentPos.x = wallLeft.transform.position.x + wallXScale.x;
+            cullentPos.z = wallLeft.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y > wallUpVerticalPos.y) //è„ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
+        if (transform.position.y > wallUp.transform.position.y - wallYScale.y) //è„ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
-            cullentPos.y = wallUpVerticalPos.y;
+            cullentPos.y = wallUp.transform.position.y - wallYScale.y;
+            cullentPos.z = wallUp.transform.position.z;
             transform.position = cullentPos;
         }
-        if (transform.position.y < wallUnderVerticalPos.y) //â∫ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
+        if (transform.position.y < wallUnder.transform.position.y + wallYScale.y) //â∫ÇÃï«Ç…ÇﬂÇËÇ±ÇÒÇæÇÁ
         {
             //ï«ÇÃíÜÇ÷ñﬂÇ∑
-            cullentPos.y = wallUnderVerticalPos.y;
+            cullentPos.y = wallUnder.transform.position.y + wallYScale.y;
+            cullentPos.z = wallUnder.transform.position.z;
             transform.position = cullentPos;
         }
 

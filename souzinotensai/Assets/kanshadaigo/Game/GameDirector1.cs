@@ -30,7 +30,7 @@ public class GameDirector1 : MonoBehaviour
         if (dirtBox.Length == 0||Input.GetKeyDown(KeyCode.Tab))
         {
             Debug.Log("ステージクリア");
-            SceneManager.LoadScene("StageClearScene");
+            SceneManager.LoadScene("Stage1ClearScene");
             CountStage();
 
         }

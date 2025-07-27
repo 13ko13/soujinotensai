@@ -27,7 +27,7 @@ public class timeScript : MonoBehaviour
         //0•bˆÈ‰º‚È‚çƒV[ƒ“ˆÚ“®
         if (this.timer <= 0.0)
         {
-            SceneManager.LoadScene("Timeoverscene");
+            SceneManager.LoadScene("GameoverScene");
         }
     void timeUp()
     {

@@ -19,7 +19,7 @@ public class GameoverDirector : MonoBehaviour
         {
             SceneManager.LoadScene("_Stage1");
         }
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
         }

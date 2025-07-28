@@ -35,6 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Integration/GameoverScene.unity
     guid: 847994c2a685a6a4c9345b412618ca9b
+  - enabled: 1
+    path: Assets/kanshadaigo/Gameover/Gameoverscene2.unity
+    guid: 4b5b62ff541c70e45b46c2b1b01563c2
+  - enabled: 1
+    path: Assets/kanshadaigo/Gameover/Gameoverscene3.unity
+    guid: 9c52a728faa22e5429f9515f691c819b
+  - enabled: 1
+    path: Assets/kanshadaigo/Gameover/Gameoverscene4.unity
+    guid: 470a52fa4b4929546b28f38502be630c
   - enabled: 0
     path: Assets/kanshadaigo/Timeover/Timeoverscene.unity
     guid: c8eb46d85f750b84787e633d5b105227

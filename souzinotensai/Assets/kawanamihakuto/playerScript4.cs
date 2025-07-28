@@ -16,7 +16,10 @@ public class player4 : MonoBehaviour
     public GameObject[] wall;
     public float speed = 0.1f;
     private float timeBetweenShot = 3.0f;//球を再度打てるようになるまでの時間
-    private float timer;
+    private float Wtimer;
+    private float Atimer;
+    private float Stimer;
+    private float Dtimer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
     public int reload = 30;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
@@ -66,6 +69,7 @@ public class player4 : MonoBehaviour
         //Wを押したとき
         if (Input.GetKeyDown(KeyCode.W))
         {
+            Wtimer = 0;
             transform.eulerAngles = new Vector3(0, 0, 0);
             SpriteRenderer.sprite = playerSprites[0];  //上向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, 1);
@@ -73,6 +77,7 @@ public class player4 : MonoBehaviour
         //Sを押したとき
         if (Input.GetKeyDown(KeyCode.S))
         {
+            Stimer = 0;
             transform.eulerAngles = new Vector3(0, 0, 180);
             SpriteRenderer.sprite = playerSprites[1];  //下向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(0, -1);
@@ -80,6 +85,7 @@ public class player4 : MonoBehaviour
         //Aを押したとき
         if (Input.GetKeyDown(KeyCode.A))
         {
+            Atimer = 0;
             transform.eulerAngles = new Vector3(0, 0, 90);
             SpriteRenderer.sprite = playerSprites[2];  //左向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(-1, 0);
@@ -87,6 +93,7 @@ public class player4 : MonoBehaviour
         //Dを押したとき
         if (Input.GetKeyDown(KeyCode.D))
         {
+            Dtimer = 0;
             transform.eulerAngles = new Vector3(0, 0, -90);
             SpriteRenderer.sprite = playerSprites[3];  //右向き
             this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
@@ -125,7 +132,7 @@ public class player4 : MonoBehaviour
 
 
 
-        timer += Time.deltaTime;//タイマーの時間を動かす
+        
 
         if (Input.GetKeyDown(KeyCode.Space) && bulletsNum >= 1)
         {
@@ -136,6 +143,65 @@ public class player4 : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+
+
+        if (Input.GetKey(KeyCode.W))
+        {
+
+            Wtimer++;
+            if (Wtimer >= 10)
+            {
+                Wtimer = 0;
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                SpriteRenderer.sprite = playerSprites[0];  //上向き
+                this.GetComponent<Rigidbody2D>().position += new Vector2(0, 1);
+            }
+        }
+
+
+        if (Input.GetKey(KeyCode.A))
+        {
+
+            Atimer++;
+            if (Atimer >= 10)
+            {
+                Atimer = 0;
+                transform.eulerAngles = new Vector3(0, 0, 90);
+                SpriteRenderer.sprite = playerSprites[2];  //右向き
+                this.GetComponent<Rigidbody2D>().position += new Vector2(-1, 0);
+            }
+
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+
+            Stimer++;
+            if (Stimer >= 10)
+            {
+                Stimer = 0;
+                transform.eulerAngles = new Vector3(0, 0, 180);
+                SpriteRenderer.sprite = playerSprites[1];  //下向き
+                this.GetComponent<Rigidbody2D>().position += new Vector2(0, -1);
+            }
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+
+            Dtimer++;
+            if (Dtimer >= 10)
+            {
+                Dtimer = 0;
+                transform.eulerAngles = new Vector3(0, 0, -90);
+                SpriteRenderer.sprite = playerSprites[3];  //右向き
+                this.GetComponent<Rigidbody2D>().position += new Vector2(1, 0);
+            }
+
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy")) // 敵かどうかのタグをチェック

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class spawnScript : MonoBehaviour
 {
+    GameObject 
+
     int rnd;
     public GameObject enemyPrefab2_2;
     public Transform firepoint1;
@@ -57,6 +59,7 @@ public class spawnScript : MonoBehaviour
         rnd = Random.Range(1, 5);
         if (rnd == 1)
         {
+            
             Instantiate(enemyPrefab2_2, firepoint1.position, transform.rotation);
             EnemyRespawnSound();
         }
@@ -87,6 +90,8 @@ public class spawnScript : MonoBehaviour
 
         time = Time.deltaTime;
        
+        
+
         if (temp==enemybox.Length&& SceneNum > 0)
         {
             

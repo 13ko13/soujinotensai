@@ -25,7 +25,7 @@ public class ClearDirector : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
         }

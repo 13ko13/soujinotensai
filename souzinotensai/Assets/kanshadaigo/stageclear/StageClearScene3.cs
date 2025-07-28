@@ -15,7 +15,7 @@ public class StageClearDirector3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene("_Stage4");
         }

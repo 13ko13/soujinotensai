@@ -44264,7 +44264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3503006600382146816, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3503006600382146816, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44332,19 +44332,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8359206281861878330, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_Size.x
-      value: 0.98780817
+      value: 0.9753539
       objectReference: {fileID: 0}
     - target: {fileID: 8359206281861878330, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_Size.y
-      value: 1.0029647
+      value: 0.981486
       objectReference: {fileID: 0}
     - target: {fileID: 8359206281861878330, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_Offset.x
-      value: 0.087150306
+      value: 0.004765898
       objectReference: {fileID: 0}
     - target: {fileID: 8359206281861878330, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_Offset.y
-      value: -0.00000011920929
+      value: -0.0000003874302
       objectReference: {fileID: 0}
     - target: {fileID: 8359206281861878330, guid: 459e974e899b68646893b630a68adb54, type: 3}
       propertyPath: m_IsTrigger
@@ -49724,12 +49724,10 @@ MonoBehaviour:
   speed: 0.1
   cleaning: 0
   reload: 30
-  wallRightSidePos: {x: 0, y: 0, z: 0}
-  wallLeftSidePos: {x: 0, y: 0, z: 0}
-  wallUpVerticalPos: {x: 0, y: 0, z: 0}
-  wallUnderVerticalPos: {x: 0, y: 0, z: 0}
-  wallThickY: {x: 0, y: 0, z: 0}
-  wallThicX: {x: 0, y: 0, z: 0}
+  wallRight: {fileID: 1109955855}
+  wallLeft: {fileID: 640424939}
+  wallUp: {fileID: 664140151}
+  wallUnder: {fileID: 1258197862}
   cullentPos: {x: 0, y: 0, z: 0}
   launchSoundSource: {fileID: 1238779758}
   dirtSound: {fileID: 1238779759}

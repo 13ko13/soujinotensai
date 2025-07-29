@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class spawnScript : MonoBehaviour
 {
-    GameObject 
+    public GameObject WarningPrefab1;
+    public GameObject WarningPrefab2;
+    public GameObject WarningPrefab3;
+    public GameObject WarningPrefab4;
 
     int rnd;
     public GameObject enemyPrefab2_2;
@@ -21,9 +24,15 @@ public class spawnScript : MonoBehaviour
     int spawn_pos;
 
     public AudioSource respawnSound;    //ìGÉäÉXÉ|Å[ÉìéûÇÃâπ
+    public AudioSource WarningSound;    //åxçêâπ
     // Start is called before the first frame update
     void Start()
     {
+        WarningPrefab1.SetActive(false);
+        WarningPrefab2.SetActive(false);
+        WarningPrefab3.SetActive(false);
+        WarningPrefab4.SetActive(false);
+
         temp = 0;
         time = 0;
         timer = 0.1f;
@@ -50,8 +59,6 @@ public class spawnScript : MonoBehaviour
         {
             SceneNum = 3;
         }
-
-
     }
 
     void SpawnEnemy()
@@ -59,24 +66,40 @@ public class spawnScript : MonoBehaviour
         rnd = Random.Range(1, 5);
         if (rnd == 1)
         {
-            
-            Instantiate(enemyPrefab2_2, firepoint1.position, transform.rotation);
-            EnemyRespawnSound();
+            WarningPrefab1.SetActive(true);
+            if (WarningSound!= null)
+            {
+                WarningSound.Play();
+            }
+            Invoke("EnemyRespawn1", 5.0f);  
         }
         if (rnd == 2)
         {
-            Instantiate(enemyPrefab2_2, firepoint2.position, transform.rotation);
-            EnemyRespawnSound();
+            WarningPrefab2.SetActive(true);
+            if (WarningSound!= null)
+            {
+                WarningSound.Play();
+            }
+
+            Invoke("EnemyRespawn2", 5.0f);   
         }
         if (rnd == 3)
         {
-            Instantiate(enemyPrefab2_2, firepoint3.position, transform.rotation);
-            EnemyRespawnSound();
+            WarningPrefab3.SetActive(true);
+            if (WarningSound != null)
+            {
+                WarningSound.Play();
+            }
+            Invoke("EnemyRespawn3", 5.0f);
         }
         if (rnd == 4)
         {
-            Instantiate(enemyPrefab2_2, firepoint4.position, transform.rotation);
-            EnemyRespawnSound();
+            WarningPrefab4.SetActive(true);
+            if (WarningSound != null)
+            {
+                WarningSound.Play();
+            }
+            Invoke("EnemyRespawn4", 5.0f);
         }    
     }
 
@@ -102,11 +125,44 @@ public class spawnScript : MonoBehaviour
         temp = enemybox.Length-1;
     }
 
-    void EnemyRespawnSound()
+    void EnemyRespawn1()
     {
+        Instantiate(enemyPrefab2_2, firepoint1.position, transform.rotation);
+        
         if (respawnSound != null)
         {
             respawnSound.Play();
         }
+        WarningPrefab1.SetActive(false);
+    }
+    void EnemyRespawn2()
+    {
+        Instantiate(enemyPrefab2_2, firepoint2.position, transform.rotation);
+
+        if (respawnSound != null)
+        {
+            respawnSound.Play();
+        }
+        WarningPrefab2.SetActive(false);
+    }
+    void EnemyRespawn3()
+    {
+        Instantiate(enemyPrefab2_2, firepoint3.position, transform.rotation);
+
+        if (respawnSound != null)
+        {
+            respawnSound.Play();
+        }
+        WarningPrefab3.SetActive(false);
+    }
+    void EnemyRespawn4()
+    {
+        Instantiate(enemyPrefab2_2, firepoint4.position, transform.rotation);
+
+        if (respawnSound != null)
+        {
+            respawnSound.Play();
+        }
+        WarningPrefab4.SetActive(false);
     }
 }

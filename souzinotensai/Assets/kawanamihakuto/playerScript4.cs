@@ -21,7 +21,7 @@ public class player4 : MonoBehaviour
     private float Stimer;
     private float Dtimer;
     public int cleaning = 0;//掃除した数(reloadの値に達したらリセットされる)
-    public int reload = 30;//弾を増やす条件の値
+    public int reload = 100;//弾を増やす条件の値
     int bulletsNum = 0;//残り弾数(↑の条件で追加される)
     int frame=0;
 

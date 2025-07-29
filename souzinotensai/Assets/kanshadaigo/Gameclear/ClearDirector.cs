@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ClearDirector : MonoBehaviour
 {
     public string menuSceneName = "MenuScene";
+    public AudioSource SE;
+    int num = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,19 +17,43 @@ public class ClearDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (num < 1)
         {
-            SceneManager.LoadScene("_Stage1");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                PlaySE();
+                num++;
+            }
         }
 
-
-
-
+        if (num >= 1)
+        {
+            if (!SE.isPlaying)
+            {
+                SceneManager.LoadScene("_stage1");
+            }
+        }
+        
 
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("MenuScene");
         }
+    }
+    void PlaySE()
+    {
+        //AudioSourceÇ≈å¯â âπÇçƒê∂
+        if (SE != null)
+        {
+            SE.Play();
+
+        }
+        else
+        {
+            Debug.Log("AudioSourceÇ™ê›íËÇ≥ÇÍÇƒÇ¢Ç»Ç¢");
+        }
+
+
     }
 }

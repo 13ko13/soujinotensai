@@ -20,7 +20,7 @@ public class EnemyNumDirector : MonoBehaviour
         //ƒV[ƒ“–¼‚ğæ“¾
         string sceneName = currentScene.name;
 
-        if (sceneName == "_Stage1")
+        if (sceneName == "_stage1")
         {
             eNum = 3;
         }

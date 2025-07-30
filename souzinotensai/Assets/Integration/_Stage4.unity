@@ -53842,7 +53842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca09cf22678eb7a46896310c4703a709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 90
+  timer: 110
   lives: 3
   gameoverscene: Gameoverscene
 --- !u!4 &1343190013
